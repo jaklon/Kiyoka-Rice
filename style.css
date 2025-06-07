@@ -26,6 +26,11 @@
     url("asset/poop.png");
 }
 
+#product {
+  background-image: linear-gradient(rgba(55, 135, 255, 0.849), rgba(0, 0, 0, 0)),
+    url("");
+}
+
 #hero {
   display: flex;
   justify-content: center;
@@ -36,11 +41,22 @@
   opacity: 1;
 }
 
+#product {
+  height: fit-content;
+}
+
 #hero h1 {
   font-size: 70px;
   font-weight: bold;
   color: #ffffff;
   padding-left: 650px;
+}
+
+#product h2 {
+  font-size: 70px;
+  font-weight: bold;
+  color: #fffb00;
+  padding-left: 0px;
 }
 
 #hero p {
