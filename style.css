@@ -69,9 +69,67 @@
   font-weight: lighter;
 }
 
-#carouselTentangPorang {
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 100px;
+.carousel-inner img {
+  width: 100%;
+  max-height: 500px; /* Gambar tidak akan lebih tinggi dari 500px */
+  object-fit: contain; /* Gambar tidak akan terpotong */
+}
 
-  }
+.carousel-item img {
+  height: 400px; /* Atur tinggi gambar */
+  object-fit: cover; /* Potong gambar agar tetap proporsional */
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  max-width: 800px; /* ganti sesuai kebutuhan, misalnya 800px atau 90% */
+  width: 100%;
+}
+
+.img-container img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+}
+
+.overlay h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Efek Hover */
+.img-container:hover img {
+  transform: scale(1.1);
+}
+
+.img-container:hover .overlay {
+  opacity: 1;
+}
+
+#carouselExampleDark {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
