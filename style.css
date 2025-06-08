@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chewy&family=DynaPuff:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
 /* Navbar link styling */
 .navbar-nav .nav-link {
   font-weight: 600;
@@ -22,8 +27,8 @@
 
 /* Background image dengan overlay pada #landing */
 #hero {
-  background-image: linear-gradient(rgba(20, 19, 19, 0.849), rgba(0, 0, 0, 0)),
-    url("asset/poop.png");
+  background-image: linear-gradient(rgba(20, 19, 19, 0), rgba(0, 0, 0, 0)),
+    url("asset/bghero.png");
 }
 
 #product {
@@ -46,26 +51,45 @@
 }
 
 #hero h1 {
-  font-size: 70px;
+  font-family: "Londrina Solid", sans-serif;
+  -webkit-text-stroke: #292d9e 4px;
+  font-size: 100px;
   font-weight: bold;
-  color: #ffffff;
+  background: linear-gradient(to top, #ffc800, #e69a0d);
+  -webkit-background-clip: text;
+  color: transparent;
   padding-left: 650px;
 }
 
+#hero p {
+  font-family: "DynaPuff", system-ui;
+  font-size: 40px;
+  color: #ffffff;
+  padding-left: 1000px;
+  padding-right: 50px;
+  font-style: italic;
+  margin-top: 50px;
+  font-weight: lighter;
+  text-align: right;
+}
+
 #product h2 {
+  font-family: "Londrina Solid", sans-serif;
+  -webkit-text-stroke: #292d9e 4px;
   font-size: 70px;
   font-weight: bold;
   color: #fffb00;
   padding-left: 0px;
 }
 
-#hero p {
-  font-size: 40px;
+#product p {
+  font-family: "DynaPuff", system-ui;
+  font-size: 20px;
   color: #ffffff;
-  padding-left: 900px;
-  padding-right: 300px;
+  padding-left: 0px;
+  padding-right: 50px;
   font-style: italic;
-  margin-top: 50px;
+  margin-top: 20px;
   font-weight: lighter;
 }
 
@@ -73,5 +97,4 @@
   padding-left: 200px;
   padding-right: 200px;
   padding-top: 100px;
-
-  }
+}
