@@ -48,6 +48,7 @@
 
 #product {
   height: fit-content;
+  position: relative;
 }
 
 #hero h1 {
@@ -78,14 +79,16 @@
   -webkit-text-stroke: #292d9e 4px;
   font-size: 70px;
   font-weight: bold;
-  color: #fffb00;
+  background: linear-gradient(to top, #ffc800, #e69a0d);
+  -webkit-background-clip: text;
+  color: transparent;
   padding-left: 0px;
 }
 
 #product p {
   font-family: "DynaPuff", system-ui;
   font-size: 20px;
-  color: #ffffff;
+  color: #000000;
   padding-left: 0px;
   padding-right: 50px;
   font-style: italic;
@@ -93,9 +96,125 @@
   font-weight: lighter;
 }
 
+#product p1 {
+  font-size: 15px;
+  color: #070404;
+  font-weight: normal;
+  align-items: center;
+}
+
+button {
+  margin-left: auto;
+  margin-right: auto; /* Agar tetap di tengah */
+  display: block;
+}
+
+.floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating {
+  position: absolute;
+  opacity: 0.5;
+  max-width: 150px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-1 {
+  top: 10%;
+  left: 3%;
+  animation-delay: 0s;
+}
+.floating-2 {
+  top: 30%;
+  right: 5%;
+  animation-delay: 2s;
+}
+.floating-3 {
+  bottom: 10%;
+  left: 3%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.product-box {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.product-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+}
+
 #carouselTentangPorang {
   padding-left: 200px;
   padding-right: 200px;
   padding-top: 100px;
+}
 
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
   }
+}
