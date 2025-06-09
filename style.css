@@ -316,3 +316,72 @@ button {
   line-height: 1.8;
   text-align: center;
 }
+
+/* Container utama */
+.comparison-container {
+
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Judul utama */
+.comparison-title { 
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Dua kolom rice */
+.comparison-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Masing-masing kolom */
+.rice-column {
+  flex: 1;
+  min-width: 250px;
+  background-color: #29e79817;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* Heading per kolom */
+.rice-column h2 {
+  background-color: #649830;
+  color: rgb(237, 235, 235);
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.rice-column li {
+  color: black;
+}
+/* List fitur */
+.rice-column ul {
+  text-align: left;
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+/* Gambar */
+.rice-column img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Carousel caption tweak */
+.carousel-caption {
+  bottom: unset;
+  top: 10%;
+  transform: none;
+}
