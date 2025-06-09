@@ -96,7 +96,6 @@
   font-weight: lighter;
 }
 
-<<<<<<< HEAD
 #product p1 {
   font-size: 15px;
   color: #070404;
@@ -219,7 +218,6 @@ button {
     text-align: left;
   }
 }
-=======
 /* Accordion container */
 .accordion {
   max-width: 800px;
@@ -281,7 +279,7 @@ button {
   display: flex;
   justify-content: center;
   padding: 50px 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .info-card {
@@ -318,5 +316,3 @@ button {
   line-height: 1.8;
   text-align: center;
 }
-
->>>>>>> ed82cae5a0ede89537e6a89a172a7ff3bfa95e29
