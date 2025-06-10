@@ -32,7 +32,7 @@
 }
 
 #product {
-  background-image: linear-gradient(rgba(55, 135, 255, 0.849), rgba(0, 0, 0, 0)),
+  background-image: linear-gradient(rgba(55, 135, 255, 0.735), rgba(0, 0, 0, 0)),
     url("");
 }
 
@@ -51,6 +51,14 @@
   position: relative;
 }
 
+.product-box {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.459),
+    rgba(55, 135, 255, 0.735)
+  ) !important;
+  color: white !important;
+}
+
 #hero h1 {
   font-family: "Londrina Solid", sans-serif;
   -webkit-text-stroke: #292d9e 4px;
@@ -59,22 +67,23 @@
   background: linear-gradient(to top, #ffc800, #e69a0d);
   -webkit-background-clip: text;
   color: transparent;
-  padding-left: 650px;
+  padding-left: 550px;
 }
 
 #hero p {
-  font-family: "DynaPuff", system-ui;
+  /* font-family: "DynaPuff", system-ui; */
   font-size: 40px;
   color: #ffffff;
-  padding-left: 1000px;
-  padding-right: 50px;
+  padding-left: 900px;
+  padding-right: 100px;
   font-style: italic;
   margin-top: 50px;
   font-weight: lighter;
   text-align: right;
+  font-weight: bold;
 }
 
-#product h2 {
+#product h1 {
   font-family: "Londrina Solid", sans-serif;
   -webkit-text-stroke: #292d9e 4px;
   font-size: 70px;
@@ -85,22 +94,32 @@
   padding-left: 0px;
 }
 
+#product h2 {
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+#product h3 {
+  /* font-family: "Londrina Solid", sans-serif;
+  -webkit-text-stroke: #292d9e 4px; */
+  font-size: 50px;
+  font-weight: bold;
+  /* background: linear-gradient(to top, #ffc800, #e69a0d); */
+  /* -webkit-background-clip: text; */
+  color: #2d3436;
+  padding-left: 0px;
+}
+
 #product p {
-  font-family: "DynaPuff", system-ui;
+  /* font-family: "DynaPuff", system-ui; */
   font-size: 20px;
   color: #000000;
   padding-left: 0px;
-  padding-right: 50px;
-  font-style: italic;
-  margin-top: 20px;
-  font-weight: lighter;
-}
-
-#product p1 {
-  font-size: 15px;
-  color: #070404;
-  font-weight: normal;
+  padding-right: 0px;
+  font-style: normal;
   align-items: center;
+  margin-top: 20px;
+  font-weight: normal;
 }
 
 button {
@@ -163,6 +182,12 @@ button {
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: #f8f9fa;
+}
+
+.modal-dialog {
+  position: fixed;
+  top: 20%;
+  left: 26%;
 }
 
 #carouselTentangPorang {
