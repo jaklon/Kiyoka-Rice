@@ -24,12 +24,11 @@ body {
   background-color: #f8f9fa;
 }
 
-.section {
-  padding: 40px;
-  text-align: center;
-  height: 100vh;
-  width: 100%;
-}
+  .section {
+            padding: 60px 0;
+            overflow-x: hidden; /* Mencegah horizontal scroll */
+            height: auto; /* PENTING: Memastikan tinggi section sesuai konten, bukan layar. Ini memperbaiki masalah tumpang tindih. */
+        }
 
 /* Background image dengan overlay pada #landing */
 /* hero section css */
@@ -106,66 +105,60 @@ body {
   }
 }
 
-.about-card {
-  background-color: #d4e9e2; /* Warna hijau lembut */
-  color: #2d3748;
-  border-radius: 20px;
-  padding: 40px 30px;
-  position: relative;
-}
+ .about-card {
+            background-color: #d4e9e2;
+            color: #2d3748;
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            height: 100%;
+        }
 
-.about-tag {
-  position: absolute;
-  top: -15px;
-  left: 25px;
-  background-color: #fff;
-  color: #333;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transform: rotate(-5deg);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        @media (max-width: 991px) {
+          .about-card {
+            width: 100px;
+            
+          }
+        }
+        .about-tag {
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            background-color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transform: rotate(-5deg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .about-card .illustration {
+            max-width: 150px;
+        }
+        .comparison-box {
+            background-color: #fdfaf6;
+            padding: 20px;
+            border-radius: 15px;
+            height: 100%;
+        }
+        .comparison-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .comparison-box ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .comparison-box ul li i {
+            margin-top: 5px;
+            color: #2f855a;
+        }
+        .comparison-box.cons i {
+            color: #e53e3e;
+        }
 
-.about-card .illustration {
-  max-width: 150px;
-}
-
-.comparison-title {
-  font-weight: 700;
-  color: #2d3748;
-}
-
-.comparison-box {
-  background-color: #fdfaf6; /* Warna krem */
-  padding: 20px;
-  border-radius: 15px;
-  height: 100%;
-}
-
-.comparison-box h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.comparison-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-.comparison-box ul li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.comparison-box ul li i {
-  margin-top: 5px;
-  color: #2f855a;
-}
-.comparison-box.cons i {
-  color: #e53e3e;
-}
 
 /* product section css */
 #product {
