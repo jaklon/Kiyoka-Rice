@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
 
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fdf6ec;
+}
+
 /* Navbar link styling */
 .navbar-nav .nav-link {
   font-weight: 600;
@@ -26,14 +32,10 @@
 }
 
 /* Background image dengan overlay pada #landing */
+/* hero section css */
 #hero {
   background-image: linear-gradient(rgba(20, 19, 19, 0), rgba(0, 0, 0, 0)),
     url("asset/bghero.png");
-}
-
-#product {
-  background-image: linear-gradient(rgba(55, 135, 255, 0.735), rgba(0, 0, 0, 0)),
-    url("");
 }
 
 #hero {
@@ -43,6 +45,7 @@
   flex-direction: column;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 1;
 }
 
@@ -68,6 +71,12 @@
   font-weight: lighter;
   text-align: right;
   font-weight: bold;
+}
+
+/* product section css */
+#product {
+  background-image: linear-gradient(rgba(55, 135, 255, 0.735), rgba(0, 0, 0, 0)),
+    url("");
 }
 
 #product {
@@ -99,33 +108,10 @@
   padding-bottom: 20px;
 }
 
-#why h2 {
-  font-family: "Londrina Solid", sans-serif;
-  -webkit-text-stroke: #292d9e 4px;
-  font-size: 70px;
-  font-weight: bold;
-  background: linear-gradient(to top, #ffc800, #e69a0d);
-  -webkit-background-clip: text;
-  color: transparent;
-  padding-left: 0px;
-}
-
-#why p {
-  /* font-family: "DynaPuff", system-ui; */
-  font-size: 20px;
-  color: #000000;
-  padding-left: 0px;
-  padding-right: 0px;
-  font-style: normal;
-  align-items: left;
-  margin-top: 0px;
-  font-weight: normal;
-}
-
 #product h3 {
   /* font-family: "Londrina Solid", sans-serif;
   -webkit-text-stroke: #292d9e 4px; */
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   /* background: linear-gradient(to top, #ffc800, #e69a0d); */
   /* -webkit-background-clip: text; */
@@ -145,10 +131,55 @@
   font-weight: normal;
 }
 
-button {
-  margin-left: auto;
-  margin-right: auto; /* Agar tetap di tengah */
-  display: block;
+.product-box {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.product-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+}
+
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+.modal-header {
+  background-color: #0023d27e;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: none;
+}
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+.modal-body .product-image-modal {
+  max-height: 250px;
+  object-fit: contain;
+}
+.nutrition-table {
+  font-size: 0.9rem;
+}
+.nutrition-table th,
+.nutrition-table td {
+  padding: 0.5rem;
+}
+.modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+.modal-footer .btn-shop {
+  background-color: #e95a0c;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+}
+.modal-footer .btn-shop:hover {
+  background-color: #c74c0a;
 }
 
 .floating-images {
@@ -195,196 +226,59 @@ button {
   }
 }
 
-.product-box {
-  transition: all 0.3s ease;
-  border-radius: 10px;
-  background-color: #ffffff;
+/* why section css */
+#why h2 {
+  font-family: "Londrina Solid", sans-serif;
+  -webkit-text-stroke: #292d9e 4px;
+  font-size: 70px;
+  font-weight: bold;
+  background: linear-gradient(to top, #ffc800, #e69a0d);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-left: 0px;
 }
 
-.product-box:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  background-color: #f8f9fa;
-}
-
-.footer {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.footer h3 {
+#why p {
+  /* font-family: "DynaPuff", system-ui; */
   font-size: 20px;
-  margin-bottom: 10px;
+  color: #000000;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-style: normal;
+  align-items: left;
+  margin-top: 0px;
+  font-weight: normal;
 }
 
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#carouselExampleCaptions {
+  position: relative; /* Membuat kontainer ini sebagai acuan posisi */
 }
 
-.footer a {
-  color: #ffd700;
-  text-decoration: none;
+.carousel-item img.carousel-image {
+  max-height: 580px; /* Atur ketinggian maksimal gambar carousel */
+  object-fit: contain; /* Agar gambar tidak terdistorsi dan pas di dalam area */
+  width: 100%;
+  background-color: #fdf6ec; /* Warna latar jika gambar tidak penuh */
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.carousel-control-prev,
+.carousel-control-next {
+  /* Posisikan di tengah secara vertikal */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4); /* Background semi-transparan */
+  border-radius: 50%; /* Membuatnya bulat */
 }
 
-.footer-contact p {
-  margin: 5px 0;
+/* Memberi sedikit jarak dari tepi */
+.carousel-control-prev {
+  left: 70px;
 }
 
-/* Responsive layout */
-@media (min-width: 600px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-}
-
-.info-card-section {
-  display: flex;
-  justify-content: center;
-  padding: 50px 50px;
-  font-family: "Poppins", sans-serif;
-}
-
-.info-card {
-  background-color: aliceblue;
-  border-radius: 20px;
-  padding: 40px 30px;
-  max-width: 700px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-
-.info-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.idea-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 12px;
-}
-
-.info-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1e3932;
-}
-
-.info-text {
-  font-size: 1rem;
-  color: #2d3436;
-  line-height: 1.8;
-  text-align: center;
-}
-
-/* Container utama */
-.comparison-container {
-  padding: 20px;
-  border-radius: 20px;
-  max-width: 800px;
-  margin: 0;
-}
-
-/* Judul utama */
-.comparison-title {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #333;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-/* Dua kolom rice */
-.comparison-box {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-
-.rice-column img {
-  margin-top: auto; /* naikkan ke bawah kolom, biar sejajar antar kolom */
-  max-width: 100%;
-  height: auto;
-}
-
-/* Masing-masing kolom */
-.rice-column {
-  flex: 1;
-  min-width: 100px;
-  background-color: #29e79817;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgb(255, 255, 255);
-  text-align: center;
-}
-
-/* Heading per kolom */
-.rice-column h2 {
-  background-color: olive;
-  color: rgb(237, 235, 235);
-  padding: 8px;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.rice-column li {
-  color: black;
-}
-/* List fitur */
-.rice-column ul {
-  text-align: left;
-  padding-left: 20px;
-  margin: 15px 0;
-}
-
-/* Gambar */
-.rice-column img {
-  width: 60%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 1/1;
-  border-radius: 10px;
-}
-
-/* .rice-column img1 {
-  padding-top: 10px;
-  width: 50%;
-  border-radius: 15px;
-} 
-
-/* Carousel caption tweak */
-.carousel-caption {
-  bottom: unset;
-  top: 10%;
-  transform: none;
-}
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #fdf6ec;
+.carousel-control-next {
+  right: 70px;
 }
 
 .cooking-section {
@@ -439,38 +333,6 @@ body {
   padding: 4px 8px;
   border-radius: 6px;
   font-weight: bold;
-}
-
-#carouselExampleCaptions {
-  position: relative; /* Membuat kontainer ini sebagai acuan posisi */
-}
-
-.carousel-item img.carousel-image {
-  max-height: 550px; /* Atur ketinggian maksimal gambar carousel */
-  object-fit: contain; /* Agar gambar tidak terdistorsi dan pas di dalam area */
-  width: 100%;
-  background-color: #f8f9fa; /* Warna latar jika gambar tidak penuh */
-}
-
-/* Mengatur posisi tombol di atas gambar */
-.carousel-control-prev,
-.carousel-control-next {
-  /* Posisikan di tengah secara vertikal */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.4); /* Background semi-transparan */
-  border-radius: 50%; /* Membuatnya bulat */
-}
-
-/* Memberi sedikit jarak dari tepi */
-.carousel-control-prev {
-  left: 15px;
-}
-
-.carousel-control-next {
-  right: 15px;
 }
 
 /* Styling untuk bagian perbandingan */
@@ -576,7 +438,7 @@ body {
 }
 
 .footer-top-bar {
-  background-color: #38a169; /* Warna hijau muda */
+  background-color: #0080ffa0; /* Warna hijau muda */
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -595,7 +457,7 @@ body {
 }
 
 .footer-main {
-  background-color: #2f855a; /* Warna hijau tua */
+  background-color: #003cffea; /* Warna hijau tua */
   padding: 40px 0 20px 0;
   text-align: center;
 }
@@ -640,47 +502,8 @@ body {
 }
 
 .footer-bottom {
-  background-color: #276749; /* Warna hijau paling tua */
+  background-color: #0800ff; /* Warna hijau paling tua */
   padding: 15px 0;
   font-size: 0.9rem;
   text-align: center;
-}
-
-.modal-content {
-  border-radius: 15px;
-  border: none;
-}
-.modal-header {
-  background-color: #2f855a;
-  color: white;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom: none;
-}
-.modal-header .btn-close {
-  filter: invert(1) grayscale(100%) brightness(200%);
-}
-.modal-body .product-image-modal {
-  max-height: 250px;
-  object-fit: contain;
-}
-.nutrition-table {
-  font-size: 0.9rem;
-}
-.nutrition-table th,
-.nutrition-table td {
-  padding: 0.5rem;
-}
-.modal-footer {
-  border-top: none;
-  justify-content: center;
-}
-.modal-footer .btn-shop {
-  background-color: #e95a0c;
-  color: white;
-  font-weight: bold;
-  padding: 10px 30px;
-}
-.modal-footer .btn-shop:hover {
-  background-color: #c74c0a;
 }
