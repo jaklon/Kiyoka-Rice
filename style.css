@@ -74,8 +74,10 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: clamp(2.5rem, 8vw, 5rem); /* Ukuran font responsif */
+  font-size: clamp(2.5rem, 9vw, 6rem); /* Ukuran font responsif */
   line-height: 1.1;
+  padding-left: 45px;
+  text-align: center;
 }
 
 #hero p {
@@ -85,6 +87,8 @@ body {
   margin-top: 20px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding-left: 30px;
+  text-align: center;
 }
 
 /* --- MEDIA QUERIES UNTUK HERO --- */
@@ -99,10 +103,16 @@ body {
     max-width: 70%; /* Perkecil gambar di mobile */
     margin-bottom: 30px;
   }
-  #hero h1,
+  #hero h1 {
+    font-size: 50px;
+    padding-right: 30px;
+  }
+  
   #hero p {
     text-align: center;
+    padding-right: 30px;
   }
+
 }
 
  .about-card {
