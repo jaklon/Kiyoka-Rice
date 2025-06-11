@@ -46,19 +46,6 @@
   opacity: 1;
 }
 
-#product {
-  height: fit-content;
-  position: relative;
-}
-
-.product-box {
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.459),
-    rgba(55, 135, 255, 0.735)
-  ) !important;
-  color: white !important;
-}
-
 #hero h1 {
   font-family: "Londrina Solid", sans-serif;
   -webkit-text-stroke: #292d9e 4px;
@@ -83,6 +70,19 @@
   font-weight: bold;
 }
 
+#product {
+  height: fit-content;
+  position: relative;
+}
+
+.product-box {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.459),
+    rgba(55, 135, 255, 0.735)
+  ) !important;
+  color: white !important;
+}
+
 #product h1 {
   font-family: "Londrina Solid", sans-serif;
   -webkit-text-stroke: #292d9e 4px;
@@ -97,6 +97,29 @@
 #product h2 {
   font-weight: bold;
   padding-bottom: 20px;
+}
+
+#why h2 {
+  font-family: "Londrina Solid", sans-serif;
+  -webkit-text-stroke: #292d9e 4px;
+  font-size: 70px;
+  font-weight: bold;
+  background: linear-gradient(to top, #ffc800, #e69a0d);
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-left: 0px;
+}
+
+#why p {
+  /* font-family: "DynaPuff", system-ui; */
+  font-size: 20px;
+  color: #000000;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-style: normal;
+  align-items: left;
+  margin-top: 0px;
+  font-weight: normal;
 }
 
 #product h3 {
@@ -184,18 +207,6 @@ button {
   background-color: #f8f9fa;
 }
 
-.modal-dialog {
-  position: fixed;
-  top: 20%;
-  left: 26%;
-}
-
-#carouselTentangPorang {
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 100px;
-}
-
 .footer {
   background-color: #1a1a1a;
   color: #fff;
@@ -243,62 +254,6 @@ button {
     text-align: left;
   }
 }
-/* Accordion container */
-.accordion {
-  max-width: 800px;
-  margin: 40px auto;
-  border-radius: 12px;
-  background-color: #fffefb;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* Accordion item */
-.accordion-item {
-  background-color: #ffffff;
-  border: none;
-  margin-bottom: 12px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-/* Header (button) style */
-.accordion-button {
-  background-color: #e0f5e8;
-  color: #1e3932;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 16px 20px;
-  border-radius: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: none;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #c3ebd2;
-  color: #0b3d2e;
-}
-
-/* Remove default border radius */
-.accordion-button:focus {
-  border: none;
-  box-shadow: none;
-}
-
-/* Accordion body */
-.accordion-body {
-  background-color: #f7fcf9;
-  padding: 18px 24px;
-  font-size: 0.95rem;
-  color: #4a4a4a;
-  line-height: 1.7;
-  border-top: 1px solid #e0e0e0;
-}
-
-/* Smooth transition */
-.accordion-collapse {
-  transition: height 0.3s ease;
-}
 
 .info-card-section {
   display: flex;
@@ -344,15 +299,14 @@ button {
 
 /* Container utama */
 .comparison-container {
-
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 0;
 }
 
 /* Judul utama */
-.comparison-title { 
+.comparison-title {
   text-align: center;
   margin-bottom: 30px;
   color: #333;
@@ -364,16 +318,23 @@ button {
 .comparison-box {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.rice-column img {
+  margin-top: auto; /* naikkan ke bawah kolom, biar sejajar antar kolom */
+  max-width: 100%;
+  height: auto;
 }
 
 /* Masing-masing kolom */
 .rice-column {
   flex: 1;
-  min-width: 250px;
+  min-width: 100px;
   background-color: #29e79817;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgb(255, 255, 255);
   text-align: center;
@@ -381,7 +342,7 @@ button {
 
 /* Heading per kolom */
 .rice-column h2 {
-  background-color: #649830;
+  background-color: olive;
   color: rgb(237, 235, 235);
   padding: 8px;
   border-radius: 8px;
@@ -400,13 +361,326 @@ button {
 
 /* Gambar */
 .rice-column img {
-  width: 100%;
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
   border-radius: 10px;
 }
+
+/* .rice-column img1 {
+  padding-top: 10px;
+  width: 50%;
+  border-radius: 15px;
+} 
 
 /* Carousel caption tweak */
 .carousel-caption {
   bottom: unset;
   top: 10%;
   transform: none;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #fdf6ec;
+}
+
+.cooking-section {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.tips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tip-card {
+  background-color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease;
+}
+
+.tip-card:hover,
+.tip-card.active {
+  background-color: #ffddb0;
+  border-color: #ffae42;
+}
+
+.instructions-panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.instructions-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.highlight {
+  background-color: #ffe1c1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+#carouselExampleCaptions {
+  position: relative; /* Membuat kontainer ini sebagai acuan posisi */
+}
+
+.carousel-item img.carousel-image {
+  max-height: 550px; /* Atur ketinggian maksimal gambar carousel */
+  object-fit: contain; /* Agar gambar tidak terdistorsi dan pas di dalam area */
+  width: 100%;
+  background-color: #f8f9fa; /* Warna latar jika gambar tidak penuh */
+}
+
+/* Mengatur posisi tombol di atas gambar */
+.carousel-control-prev,
+.carousel-control-next {
+  /* Posisikan di tengah secara vertikal */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4); /* Background semi-transparan */
+  border-radius: 50%; /* Membuatnya bulat */
+}
+
+/* Memberi sedikit jarak dari tepi */
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+/* Styling untuk bagian perbandingan */
+.comparison-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 8px;
+  color: #333; /* Warna teks agar terbaca jelas */
+}
+
+.comparison-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.comparison-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.rice-column {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+}
+
+.rice-column h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.rice-column ul {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Teks list rata kiri agar rapi */
+  display: inline-block;
+}
+
+.rice-column li {
+  margin-bottom: 8px;
+}
+
+.comparison-image {
+  max-width: 80px; /* Ukuran gambar perbandingan lebih kecil */
+  height: auto;
+  margin-top: 15px;
+}
+
+#whatsapp-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 20px; /* Memberi ruang di dalam tombol */
+  background-color: #25d366;
+  color: white;
+  border-radius: 30px; /* Mengubah bentuk menjadi pil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Jarak antara ikon dan teks */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#whatsapp-button:hover {
+  transform: scale(1.05); /* Sedikit perbesar saat hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#whatsapp-button svg {
+  width: 28px; /* Sesuaikan ukuran ikon */
+  height: 28px;
+  fill: currentColor;
+}
+
+/* Tombol kembali menjadi lingkaran di layar kecil (Mobile) */
+@media (max-width: 768px) {
+  #whatsapp-button span {
+    display: none; /* Sembunyikan teks di layar kecil */
+  }
+  #whatsapp-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    gap: 0;
+  }
+  #whatsapp-button svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* --- STYLING UNTUK FOOTER --- */
+.site-footer {
+  position: relative;
+  color: #fff;
+}
+
+.footer-top-bar {
+  background-color: #38a169; /* Warna hijau muda */
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-top-bar img {
+  height: 40px;
+}
+
+.footer-top-bar p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.footer-main {
+  background-color: #2f855a; /* Warna hijau tua */
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+
+.footer-main h4 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.marketplace-icons a {
+  display: inline-block;
+  margin: 0 15px;
+  transition: transform 0.2s ease;
+}
+
+.marketplace-icons a:hover {
+  transform: scale(1.1);
+}
+
+.marketplace-icons img {
+  height: 60px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.shop-now-btn {
+  display: inline-block;
+  background-color: #f0fdf4;
+  color: #2f855a;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.shop-now-btn:hover {
+  background-color: #dcfce7;
+  color: #2f855a;
+}
+
+.footer-bottom {
+  background-color: #276749; /* Warna hijau paling tua */
+  padding: 15px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+.modal-header {
+  background-color: #2f855a;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: none;
+}
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+.modal-body .product-image-modal {
+  max-height: 250px;
+  object-fit: contain;
+}
+.nutrition-table {
+  font-size: 0.9rem;
+}
+.nutrition-table th,
+.nutrition-table td {
+  padding: 0.5rem;
+}
+.modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+.modal-footer .btn-shop {
+  background-color: #e95a0c;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+}
+.modal-footer .btn-shop:hover {
+  background-color: #c74c0a;
 }
