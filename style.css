@@ -387,13 +387,13 @@ body {
   background-color: #fdf6ec;
 }
 
-.cooking-section {
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: auto;
+
+
+.click-text {
+  font-weight: bold;
+  background-color: #ffe2be;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
 .tips-container {
@@ -404,21 +404,33 @@ body {
 }
 
 .tip-card {
-  background-color: #ffffff;
-  padding: 12px 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+ background-color: #ffe2be;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-weight: 600;
-  text-align: center;
-  border: 1px solid transparent;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
+  border: 2px solid transparent;
 }
 
+.tip-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.card-title {
+   font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
 .tip-card:hover,
 .tip-card.active {
-  background-color: #ffddb0;
-  border-color: #ffae42;
+  background-color: #ffffff;
+  transform: translateY(-2px);
+   border: 2px solid #ffa94d;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .instructions-panel {
@@ -429,9 +441,17 @@ body {
 }
 
 .instructions-text {
-  font-size: 1rem;
-  line-height: 1.6;
+   margin-top: 1.5rem;
+  text-align: center;
+  font-size: 16px;
   color: #333;
+  padding: 1rem;
+  background-color: #fff8ef;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 .highlight {
@@ -683,4 +703,18 @@ body {
 }
 .modal-footer .btn-shop:hover {
   background-color: #c74c0a;
+}
+
+.rice-comparison {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* Jarak antar gambar */
+  margin-top: 20px;
+}
+
+.rice-image img {
+  width: 600px; /* Atur ukuran sesuai kebutuhan */
+  height: auto;
+  object-fit: contain;
 }
