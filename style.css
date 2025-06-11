@@ -40,37 +40,70 @@ body {
 
 #hero {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  height: 100vh;
+  min-height: 600px;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
+    url("/asset/bghero.png"); */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-product-img {
+  max-width: 100%;
+  height: auto;
+  /* Animasi untuk gambar produk */
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #hero h1 {
   font-family: "Londrina Solid", sans-serif;
-  -webkit-text-stroke: #292d9e 4px;
-  font-size: 100px;
-  font-weight: bold;
+  font-weight: 900;
+  -webkit-text-stroke: 3px #003366; /* Stroke biru gelap */
   background: linear-gradient(to top, #ffc800, #e69a0d);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-  padding-left: 550px;
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Ukuran font responsif */
+  line-height: 1.1;
 }
 
 #hero p {
-  /* font-family: "DynaPuff", system-ui; */
-  font-size: 40px;
+  font-size: clamp(1.1rem, 3vw, 1.5rem); /* Ukuran font responsif */
   color: #ffffff;
-  padding-left: 900px;
-  padding-right: 100px;
   font-style: italic;
-  margin-top: 50px;
-  font-weight: lighter;
-  text-align: right;
+  margin-top: 20px;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --- MEDIA QUERIES UNTUK HERO --- */
+@media (max-width: 767.98px) {
+  #hero {
+    height: auto; /* Tinggi otomatis di mobile */
+    padding-top: 100px; /* Jarak dari navbar */
+    padding-bottom: 60px;
+    text-align: center;
+  }
+  .hero-product-img {
+    max-width: 70%; /* Perkecil gambar di mobile */
+    margin-bottom: 30px;
+  }
+  #hero h1,
+  #hero p {
+    text-align: center;
+  }
 }
 
 /* product section css */
