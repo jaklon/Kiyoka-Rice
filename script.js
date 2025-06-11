@@ -22,12 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const instructions = {
       "Tahukah Kamu ?":
         "Beras porang adalah pilihan cerdas bagi kamu yang peduli kesehatan. \nDibanding beras putih biasa, beras porang punya sejumlah keunggulan yang mengagumkan! \n\n📉 Lebih Rendah Kalori & Karbohidrat\n🏥 Ramah untuk Penderita Diabetes\n🍵 Bikin Kenyang Lebih Lama\n🌿 Tanpa Pengawet & Gluten-Free",
-      "Cara Masak Beras Porang":
-        "1. Masukkan beras ke dalam mangkok/wadah.\n2. Tuang air panas dengan perbandingan 1 (beras) : 1,5 (air panas).\n3. Aduk rata.\n4. Tutup wadah dan tunggu selama 15 - 20 menit.\n5. Nasi Porang siap disajikan!",
-      "Cara Masak Beras Jagung":
-        "1. Masukkan air dan beras jagung dengan takaran 1 : 1 ke dalam rice cooker.\n2. Tekan tombol masak, tunggu hingga matang.\n3. Untuk hasil maksimal, setelah nasi matang, diamkan dulu selama 5-10 menit agar lebih tanak.",
-      "Cara Masak Beras Singkong":
-        "1. Masukkan air dan beras singkong dengan takaran 1 : 1 ke dalam rice cooker.\n2. Tekan tombol masak, tunggu hingga matang.\n3. Untuk hasil maksimal, biarkan nasi di dalam rice cooker selama 5-10 menit setelah matang.",
+      "Beras Porang VS Beras Biasa":
+        "",
     };
 
     // Hapus kelas 'active' dari semua kartu
