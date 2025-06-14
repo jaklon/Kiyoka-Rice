@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chewy&family=DynaPuff:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
 
 /*
@@ -47,7 +47,7 @@ body {
   height: 100vh;
   min-height: 600px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
-    url("asset/bghero.png"); 
+    url("asset/jepangbg.jpg"); 
   background-size: cover;
   background-position: center;
 }
@@ -70,14 +70,14 @@ body {
 }
 
 #hero h1 {
-  font-family: "Londrina Solid", sans-serif;
+  font-family: "Bungee", cursive;
   font-weight: 900;
   -webkit-text-stroke: 3px #3D405B; /* Changed */
   background: linear-gradient(to top, #FFE69A, #fff); /* Changed */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: clamp(2.5rem, 9vw, 6rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
   padding-left: 45px;
   text-align: center;
@@ -111,140 +111,207 @@ body {
   }
 }
 
-/* === Chat Layout === */
-        #about {
-            background-color: #D7C49E;
-        }
-        
-        .section-title-alt {
-            font-family: 'Londrina Solid', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: #fff;
-            -webkit-text-stroke: 2px #3D405B;
-            text-shadow: 3px 3px 0 #3D405B;
-            margin-bottom: 3rem;
-        }
+/* === Chat Layout (Versi Split Screen Baru) === */
+#about {
+    background-color: #D7C49E;
+    overflow: hidden; 
+}
 
-        .chat-container {
-            max-width: 800px; /* Adjusted max-width */
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Adjusted gap */
-        }
+/* Judul sekarang di kolom kiri, tidak lagi di tengah */
+#about .section-title-alt {
+    text-align: left; /* Rata kiri */
+    font-size: clamp(2.2rem, 7vw, 3.5rem); /* Sedikit disesuaikan */
+    text-shadow: 2px 2px 0 #3D405B;
+    /* Animasi tetap sama */
+    opacity: 0;
+    transform: translateY(30px);
+}
 
-        .chat-bubble-wrapper {
-            display: flex;
-            align-items: flex-end;
-            gap: 15px;
-            max-width: 80%; /* Adjusted max-width for bubbles */
-        }
+.about-info-panel {
+    background-color: #FEFBF6; /* Warna putih gading yang sesuai tema */
+    padding: 2.5rem; /* Jarak antara tulisan dan tepi kotak */
+    border-radius: 15px; /* Sudut yang lebih tumpul dan modern */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Efek bayangan agar terlihat 'mengambang' */
+    height: 100%; /* Memastikan tinggi panel konsisten dengan kolom kanan */
+}
 
-        .chat-bubble-wrapper.left {
-            align-self: flex-start;
-        }
+.info-box-question {
+    background-color: #FFE69A; /* Buttery Yellow */
+    color: #3D405B; /* Dark Muted Blue */
+    font-weight: bold;
+    font-size: 25px; /* Ukuran font lebih kecil */
+    padding: 8px 15px; /* Padding untuk ukuran kotak */
+    border-radius: 10px; /* Sudut sedikit melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Agar lebarnya sesuai konten */
+    position: relative; /* Penting untuk z-index dan transform */
+    z-index: 4; /* Pastikan di atas semua elemen lain di kolom ini */
+    
+    /* MODIFIKASI: Posisi di kiri atas dengan sedikit tumpang tindih */
+    margin-left: 20px; /* Jarak dari kiri kolom */
+    margin-bottom: -15px; /* Dorong ke atas agar sedikit menumpuk dengan panel di bawahnya */
+    transform: translateY(15px); /* Geser ke atas agar ada efek tumpang tindih */
+    
+    transition: transform 0.3s ease; /* Transisi untuk efek hover */
+}
 
-        .chat-bubble-wrapper.right {
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
+.about-description {
+    font-size: 1.1rem;
+    color: #3D405B;
+    margin-bottom: 2rem;
+}
 
-        .chat-avatar {
-            width: 60px; /* Adjusted size */
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #FEFBF6;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            flex-shrink: 0;
-            background-color: #fff;
-        }
+.about-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        .chat-bubble {
-            border-radius: 20px;
-            padding: 20px 25px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            width: 100%;
-        }
+.about-benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
 
-        /* Bubble Tails */
-        .chat-bubble::after {
-            content: '';
-            position: absolute;
-            bottom: 15px;
-            width: 0;
-            height: 0;
-            border: 15px solid transparent;
-            border-bottom-width: 0;
-        }
+.about-benefits-list i {
+    font-size: 1.8rem;
+    color: #C38D6F;
+    margin-top: 5px;
+}
 
-        .chat-bubble-wrapper.left .chat-bubble {
-            background: #FEFBF6;
-            border-top-left-radius: 5px;
-        }
-        .chat-bubble-wrapper.left .chat-bubble::after {
-            left: -15px;
-            border-right-color: #FEFBF6;
-        }
+.about-benefits-list span {
+    font-size: 1rem;
+    color: #3D405B;
+    line-height: 1.4;
+}
 
-        .chat-bubble-wrapper.right .chat-bubble {
-            background: #E3F2FD; /* Light blue for user */
-            border-top-right-radius: 5px;
-        }
-        .chat-bubble-wrapper.right .chat-bubble::after {
-            right: -15px;
-            border-left-color: #E3F2FD;
-        }
-        
-        .chat-title {
-            font-family: 'DynaPuff', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #3D405B;
-        }
+.about-benefits-list span br {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
 
-        .chat-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .chat-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        .chat-list i {
-            color: #C38D6F;
-            font-size: 1.3rem;
-        }
+/* Penyesuaian untuk Chat Container di kolom kanan */
+.chat-container {
+    max-width: none; /* Hapus max-width agar mengisi kolom */
+    margin: 0; /* Hapus margin auto */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: larger;
+}
 
-        .vs-divider {
-            text-align: center;
-            font-family: 'Londrina Solid', sans-serif;
-            font-size: 2.5rem;
-            color: rgba(255,255,255,0.7);
-            margin: 10px 0;
-        }
+.chat-bubble-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    max-width: 90%; /* Dibuat relatif terhadap kolomnya */
+    /* Animasi tetap sama */
+    opacity: 0;
+    transform: translateY(20px);
+}
 
+.chat-bubble-wrapper.left {
+    align-self: flex-start;
+}
 
-        @media (max-width: 767px) {
-            .chat-bubble-wrapper {
-                max-width: 95%;
-            }
-            .chat-avatar {
-                width: 50px;
-                height: 50px;
-            }
-        }
-        /* === END OF LAYOUT === */
+.chat-bubble-wrapper.right {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chat-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FEFBF6;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    background-color: #fff;
+}
+
+.chat-bubble {
+    border-radius: 20px;
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+/* Bubble Tails (tidak ada perubahan) */
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-bottom-width: 0;
+}
+
+.chat-bubble-wrapper.left .chat-bubble {
+    background: #FEFBF6;
+    border-top-left-radius: 5px;
+}
+.chat-bubble-wrapper.left .chat-bubble::after {
+    left: -15px;
+    border-right-color: #FEFBF6;
+}
+
+.chat-bubble-wrapper.right .chat-bubble {
+    background: #E3F2FD;
+    border-top-right-radius: 5px;
+}
+.chat-bubble-wrapper.right .chat-bubble::after {
+    right: -15px;
+    border-left-color: #E3F2FD;
+}
+
+.chat-title {
+    font-family: 'DynaPuff', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #3D405B;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.chat-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.chat-list i {
+    color: #C38D6F;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 991px) { /* breakpoint saat kolom turun */
+    #about .section-title-alt {
+        text-align: center; /* Kembali ke tengah di layar kecil */
+    }
+    .chat-bubble-wrapper {
+        max-width: 80%;
+    }
+}
+/* === END OF LAYOUT === */
+
 /* product section css */
 #product {
   background: linear-gradient(to bottom, #B4C5E4, #FEFBF6); /* Changed */
   position: relative;
+  /* Tambahan untuk animasi */
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 #product h2, #product h3 {
@@ -359,6 +426,9 @@ body {
 /* why section css */
 #why {
     background-color: #FEFBF6; 
+    /* Tambahan untuk animasi */
+    opacity: 0;
+    transform: translateY(30px);
 }
 #why h2 {
   font-family: "Londrina Solid", sans-serif;
