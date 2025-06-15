@@ -143,13 +143,15 @@ body {
 }
 
 .about-info-panel {
-  background-color: #fff8e1; /* CHANGED */
-  padding: 2.5rem;
-  border-radius: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 3px solid #fff;
-  height: 100%;
+    background-color: #f0f0f0; /* Changed to a lighter grey for better contrast against navajowhite */
+    padding: 30px; /* Increased padding to give text more space */
+    border-radius: 20px; /* Menambahkan border-radius agar sudut tidak terlalu tajam sebelum mask */
+    position: relative; /* Penting untuk positioning mask */
+    overflow: hidden; /* Penting agar mask bekerja dengan baik */
+
+
 }
+
 
 .info-box-question {
   background-color: #ffd180; /* CHANGED */
@@ -193,6 +195,7 @@ body {
   gap: 15px;
 }
 
+
 .about-benefits-list i {
   font-size: 1.8rem;
   color: #ffab91; /* CHANGED */
@@ -223,7 +226,8 @@ body {
 }
 
 .chat-bubble-wrapper.left {
-  align-self: flex-start;
+    align-self: flex-start;
+    margin-left: 20px; /* Tambahkan jarak dari sisi kiri jika perlu */
 }
 
 .chat-bubble-wrapper.right {
@@ -260,12 +264,29 @@ body {
 }
 
 .chat-bubble-wrapper.left .chat-bubble {
-  background: #ffffff; /* CHANGED */
-  border-top-left-radius: 5px;
+    background: #A5D6A7; /* Warna hijau seperti pada gambar */
+    border-top-left-radius: 20px; /* Sudut melengkung */
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 5px; /* Sudut kanan bawah lebih kecil untuk efek gelembung */
+    padding: 20px 25px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-family: "Nunito", sans-serif; /* Sesuaikan font jika perlu */
+    color: #5D4037; /* Warna teks agar kontras dengan latar hijau */
 }
+
 .chat-bubble-wrapper.left .chat-bubble::after {
-  left: -15px;
-  border-right-color: #ffffff; /* CHANGED */
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Posisi ekor di bawah */
+    left: 20px; /* Sesuaikan posisi ekor ke kiri */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #A5D6A7; /* Warna ekor sama dengan latar */
 }
 
 .chat-bubble-wrapper.right .chat-bubble {
@@ -303,16 +324,16 @@ body {
 }
 
 /* product section css */
+/* product section css */
 #product {
-  background: linear-gradient(to bottom, #fff8e1, #ffab91 150%); /* CHANGED */
+  background: linear-gradient(to bottom, #fff8e1, #ffab91 150%);
   position: relative;
-  /* FIXED: Removed opacity and transform so it's visible by default */
 }
 
 #product h2,
 #why h2,
 .text-3xl.font-bold {
-  font-family: "Knewave", cursive; /* CHANGED */
+  font-family: "Knewave", cursive;
   -webkit-text-stroke: 3px #5d4037;
   font-size: clamp(3rem, 10vw, 4.5rem);
   font-weight: 400;
@@ -328,7 +349,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   padding-bottom: 20px;
-  color: #5d4037; /* CHANGED */
+  color: #5d4037;
 }
 
 #product p,
@@ -346,14 +367,14 @@ body {
 .product-box {
   transition: all 0.3s ease;
   border-radius: 25px;
-  background-color: #ffffff;
+  background-color: #ffd180; /* Warna kuning lembut */
   color: #5d4037;
-  border: 2px solid #ffd180;
+  border: 2px solid #ffab91;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .product-box:hover {
-  transform: translateY(-8px) rotate(2deg); /* Cuter hover effect */
+  transform: translateY(-8px) rotate(2deg);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -367,8 +388,8 @@ body {
   font-size: 1rem;
 }
 .product-box .btn-primary {
-  background-color: #ffab91; /* CHANGED */
-  border-color: #ffab91;
+  background-color: indianred; /* UBAH INI: Warna hijau lembut */
+  border-color: #A5D6A7; /* UBAH INI: Warna border yang sama */
   color: #fff;
   font-weight: bold;
   border-radius: 50px;
@@ -376,9 +397,9 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .product-box .btn-primary:hover {
-  background-color: #f89a7a; /* CHANGED */
-  border-color: #f89a7a;
-  transform: scale(1.1); /* Bounce effect */
+  background-color: #8CC08E; /* UBAH INI: Warna hijau yang sedikit lebih gelap untuk hover */
+  border-color: #8CC08E; /* UBAH INI: Warna border yang sama untuk hover */
+  transform: scale(1.1);
 }
 
 .modal-content {
