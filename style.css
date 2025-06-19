@@ -19,7 +19,7 @@
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "DM Serif Display", serif;
   background-color: #ffffff;
   color: #001f3f;
 }
@@ -168,7 +168,7 @@ body {
 .product-box {
   transition: all 0.3s ease;
   border-radius: 25px;
-  background-color: #ffffff;
+  background-color: #be858598;
   color: #001f3f;
   border: 1px solid #e6f7ff;
   box-shadow: 0 8px 25px rgba(0, 174, 239, 0.08);
@@ -180,9 +180,9 @@ body {
 }
 
 .product-box h4 {
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.8rem;
-  color: #00aeef;
+  color: #000a39;
 }
 
 .product-box p {
@@ -322,7 +322,7 @@ body {
   bottom: 25px;
   right: 25px;
   padding: 10px 20px;
-  background-color: #25d366; /* Kept green for brand recognition */
+  background-color: #655137; /* Kept green for brand recognition */
   color: white;
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -386,19 +386,19 @@ body {
 
 .footer-top-bar p {
   margin: 0;
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   color: #001f3f;
 }
 
 .footer-main {
-  background-color: #001f3f;
+  background-color: #e5a3a4;
   padding: 40px 0 20px 0;
   text-align: center;
 }
 
 .footer-main h4 {
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -427,7 +427,7 @@ body {
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   margin-top: 30px;
   transition: all 0.3s ease;
@@ -441,7 +441,7 @@ body {
 }
 
 .footer-bottom {
-  background-color: #001021;
+  background-color: #e5a3a4;
   padding: 15px 0;
   font-size: 0.9rem;
   text-align: center;
