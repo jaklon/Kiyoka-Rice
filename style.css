@@ -2,52 +2,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&family=DynaPuff:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
-/* NEW: Import font Nunito yang lebih lembut untuk teks */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+/* NEW: Import font Lilita One */
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
 /*
-  CUTE Color Palette (New):
-  - Background: #FFF8E1 (Creamy White)
-  - Text/Primary: #5D4037 (Soft Brown)
-  - Main Accent: #FFAB91 (Pastel Peach)
-  - Secondary Accent: #FFD180 (Soft Orange)
-  - Tertiary Accent: #A5D6A7 (Soft Green)
+  KIYOKA RICE Brand Palette (Based on New Image):
+  - Background: #F8F9FA (Off-White)
+  - Text/Primary: #001F3F (Dark Navy)
+  - Main Accent: #00AEEF (Bright Blue)
+  - Highlight Accent: #8BC34A (Vibrant Green)
+  - Secondary Accent: #FFD200 (Golden Yellow)
+  - Tertiary Accent: #E6F7FF (Very Light Blue)
   - White: #FFFFFF
 */
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif; /* NEW: Font lebih lembut */
-  background-color: #fff8e1; /* CHANGED */
-  color: #5d4037; /* CHANGED */
+  font-family: "Nunito", sans-serif;
+  background-color: #f8f9fa;
+  color: #001f3f;
 }
 
 /* Navbar link styling */
 .navbar {
-  background-color: rgba(
-    255,
-    248,
-    225,
-    0.8
-  ) !important; /* CHANGED: Warna krem transparan */
+  background-color: rgba(248, 249, 250, 0.8) !important;
   backdrop-filter: blur(10px);
 }
 
 .navbar-brand {
-  font-family: "Chewy", cursive; /* CHANGED */
-  font-size: 1.8rem;
-  color: #5d4037 !important; /* CHANGED */
+  font-family: "Lilita One", cursive; /* CHANGED */
+  font-size: 2rem; /* Adjusted size */
+  color: #001f3f !important;
 }
 
 .navbar-nav .nav-link {
   font-weight: 700;
-  font-size: 1.1rem; /* Slightly larger */
-  color: #5d4037; /* CHANGED */
+  font-size: 1.1rem;
+  color: #001f3f;
   transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffab91; /* CHANGED */
+  color: #00aeef;
 }
 
 .section {
@@ -62,8 +59,12 @@ body {
   align-items: center;
   height: 100vh;
   min-height: 600px;
-  background-image: linear-gradient(to top, rgba(255, 248, 225, 0.1)),
-    url("asset/jepangbg.jpg");
+  background-image: linear-gradient(
+      to top,
+      rgba(230, 247, 255, 0.2),
+      rgba(248, 249, 250, 0.1)
+    ),
+    url("/asset/bghero.png");
   background-size: cover;
   background-position: center;
 }
@@ -85,31 +86,44 @@ body {
   justify-content: center;
 }
 
-#hero h1 {
-  font-family: "Knewave", cursive; /* CHANGED */
+/* === FONT STYLE UPDATED === */
+.main-headline,
+#hero h1,
+#product h2,
+#why h2,
+.text-3xl.font-bold {
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-weight: 400;
-  -webkit-text-stroke: 3px #5d4037; /* CHANGED */
-  background: linear-gradient(to top, #ffd180, #fff); /* CHANGED */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  /* New outline style using layered text-shadow */
+  text-shadow: 3px 3px 0px #001f3f, -3px 3px 0px #001f3f, 3px -3px 0px #001f3f,
+    -3px -3px 0px #001f3f;
+  -webkit-text-stroke: 0; /* Disabled stroke */
+  font-size: clamp(3rem, 10vw, 5rem);
   line-height: 1.2;
   text-align: center;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
   padding-left: 0;
 }
 
+/* Specific colors for headlines */
+#hero h1 {
+  color: #ffffff; /* White fill */
+}
+
+#product h2,
+#why h2,
+.text-3xl.font-bold {
+  color: #ffd200; /* Yellow fill */
+}
+
 #hero p {
-  font-family: "Nunito", sans-serif; /* CHANGED */
-  font-weight: 800; /* Extra bold for readability */
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   color: #ffffff;
   margin-top: 20px;
-  /* FIXED: Added a stroke for high contrast */
-  -webkit-text-stroke: 1px #5d4037;
-  text-stroke: 1px #5d4037;
-  text-shadow: 3px 3px 6px rgba(93, 64, 55, 0.8); /* Stronger shadow */
+  -webkit-text-stroke: 1px #001f3f;
+  text-stroke: 1px #001f3f;
+  text-shadow: 3px 3px 6px rgba(0, 31, 63, 0.8);
   text-align: center;
   padding-left: 0;
 }
@@ -129,21 +143,20 @@ body {
 
 /* === Chat Layout === */
 #about {
-  background-color: navajowhite; /* CHANGED */
+  background-color: #e6f7ff;
   overflow: hidden;
 }
 
 #about .section-title-alt {
-  font-family: "Chewy", cursive; /* CHANGED */
+  font-family: "Lilita One", cursive; /* CHANGED */
   text-align: left;
-  font-size: clamp(2.5rem, 7vw, 3.8rem);
-  color: peru;
-  text-shadow: 3px 3px 0 black;
-  /* FIXED: Removed opacity and transform so it's visible by default */
+  font-size: clamp(2.8rem, 7vw, 4rem);
+  color: #00aeef;
+  text-shadow: 3px 3px 0 #001f3f;
 }
 
 .about-info-panel {
-  background-color: #fff8e1; /* CHANGED */
+  background-color: #f8f9fa;
   padding: 2.5rem;
   border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -152,9 +165,9 @@ body {
 }
 
 .info-box-question {
-  background-color: #ffd180; /* CHANGED */
-  color: #5d4037;
-  font-family: "Chewy", cursive; /* CHANGED */
+  background-color: #ffd200;
+  color: #001f3f;
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 28px;
   padding: 10px 20px;
   border-radius: 15px;
@@ -174,7 +187,7 @@ body {
 
 .about-description {
   font-size: 1.1rem;
-  color: #5d4037;
+  color: #001f3f;
   margin-bottom: 2rem;
 }
 
@@ -195,14 +208,21 @@ body {
 
 .about-benefits-list i {
   font-size: 1.8rem;
-  color: #ffab91; /* CHANGED */
+  color: #8bc34a;
   margin-top: 5px;
 }
 
 .about-benefits-list span {
-  font-size: 1rem;
-  color: #5d4037;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #8bc34a;
   line-height: 1.4;
+}
+
+.about-benefits-list span strong,
+.about-benefits-list span br {
+  color: #001f3f;
+  font-weight: 400;
 }
 
 .chat-container {
@@ -219,7 +239,6 @@ body {
   align-items: flex-end;
   gap: 15px;
   max-width: 90%;
-  /* FIXED: Removed opacity and transform so it's visible by default */
 }
 
 .chat-bubble-wrapper.left {
@@ -260,29 +279,30 @@ body {
 }
 
 .chat-bubble-wrapper.left .chat-bubble {
-  background: #ffffff; /* CHANGED */
+  background: #ffffff;
   border-top-left-radius: 5px;
 }
 .chat-bubble-wrapper.left .chat-bubble::after {
   left: -15px;
-  border-right-color: #ffffff; /* CHANGED */
+  border-right-color: #ffffff;
 }
 
 .chat-bubble-wrapper.right .chat-bubble {
-  background: beige; /* CHANGED */
+  background: #00aeef;
+  color: #ffffff;
   border-top-right-radius: 5px;
 }
 .chat-bubble-wrapper.right .chat-bubble::after {
   right: -15px;
-  border-left-color: beige; /* CHANGED */
+  border-left-color: #00aeef;
 }
 
 .chat-title {
-  font-family: "Chewy", cursive; /* CHANGED */
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-weight: 400;
   font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #5d4037;
+  color: inherit;
 }
 
 .chat-list {
@@ -297,30 +317,23 @@ body {
   margin-bottom: 12px;
   font-weight: 500;
 }
-.chat-list i {
-  color: #ffab91; /* CHANGED */
-  font-size: 1.3rem;
+
+.chat-bubble-wrapper.right .chat-list i,
+.chat-bubble-wrapper.right .chat-list span {
+  color: #8bc34a;
+}
+
+.chat-bubble-wrapper.left .chat-list i {
+  color: #e74c3c;
+}
+.chat-bubble-wrapper.left .chat-list span {
+  color: #001f3f;
 }
 
 /* product section css */
 #product {
-  background: linear-gradient(to bottom, #fff8e1, #ffab91 150%); /* CHANGED */
+  background: linear-gradient(to bottom, #f8f9fa, #e6f7ff 150%);
   position: relative;
-  /* FIXED: Removed opacity and transform so it's visible by default */
-}
-
-#product h2,
-#why h2,
-.text-3xl.font-bold {
-  font-family: "Knewave", cursive; /* CHANGED */
-  -webkit-text-stroke: 3px #5d4037;
-  font-size: clamp(3rem, 10vw, 4.5rem);
-  font-weight: 400;
-  background: linear-gradient(to top, #ffd180, #fff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  padding-left: 0px;
 }
 
 #product h3,
@@ -328,13 +341,13 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   padding-bottom: 20px;
-  color: #5d4037; /* CHANGED */
+  color: #001f3f;
 }
 
 #product p,
 #why p {
   font-size: 1.1rem;
-  color: #5d4037;
+  color: #001f3f;
   padding-left: 0px;
   padding-right: 0px;
   font-style: normal;
@@ -347,28 +360,28 @@ body {
   transition: all 0.3s ease;
   border-radius: 25px;
   background-color: #ffffff;
-  color: #5d4037;
-  border: 2px solid #ffd180;
+  color: #001f3f;
+  border: 2px solid #00aeef;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .product-box:hover {
-  transform: translateY(-8px) rotate(2deg); /* Cuter hover effect */
+  transform: translateY(-8px) rotate(2deg);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-box h4 {
-  font-family: "Chewy", cursive;
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 1.8rem;
 }
 
 .product-box p {
-  color: #5d4037;
+  color: #001f3f;
   font-size: 1rem;
 }
 .product-box .btn-primary {
-  background-color: #ffab91; /* CHANGED */
-  border-color: #ffab91;
+  background-color: #00aeef;
+  border-color: #00aeef;
   color: #fff;
   font-weight: bold;
   border-radius: 50px;
@@ -376,18 +389,18 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .product-box .btn-primary:hover {
-  background-color: #f89a7a; /* CHANGED */
-  border-color: #f89a7a;
-  transform: scale(1.1); /* Bounce effect */
+  background-color: #0095c7;
+  border-color: #0095c7;
+  transform: scale(1.1);
 }
 
 .modal-content {
   border-radius: 25px;
-  border: 3px solid #ffd180;
-  background-color: #fff8e1;
+  border: 3px solid #ffd200;
+  background-color: #f8f9fa;
 }
 .modal-header {
-  background-color: #ffab91; /* CHANGED */
+  background-color: #00aeef;
   color: white;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
@@ -397,7 +410,7 @@ body {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 .modal-title {
-  font-family: "Chewy", cursive;
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 1.5rem;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -418,16 +431,16 @@ body {
   justify-content: center;
 }
 .modal-footer .btn-shop {
-  background-color: #ffab91;
+  background-color: #00aeef;
   color: white;
-  font-family: "Chewy", cursive;
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 1.3rem;
   padding: 10px 30px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 .modal-footer .btn-shop:hover {
-  background-color: #f89a7a;
+  background-color: #0095c7;
   transform: scale(1.05) rotate(-2deg);
 }
 
@@ -443,8 +456,7 @@ body {
 
 /* why section css */
 #why {
-  background-color: #fff8e1; /* CHANGED */
-  /* FIXED: Removed opacity and transform so it's visible by default */
+  background-color: #f8f9fa;
 }
 
 .carousel-item img.carousel-image {
@@ -458,7 +470,7 @@ body {
 .carousel-control-next {
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 171, 145, 0.7); /* CHANGED */
+  background-color: rgba(0, 174, 239, 0.7);
   border-radius: 50%;
 }
 
@@ -471,7 +483,7 @@ body {
 
 /* Review Scroller Section */
 .scroller-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -526,7 +538,7 @@ body {
   bottom: 25px;
   right: 25px;
   padding: 10px 20px;
-  background-color: #4dc247;
+  background-color: #25d366; /* Kept green for brand recognition */
   color: white;
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -536,7 +548,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: "Nunito", sans-serif; /* CHANGED */
+  font-family: "Nunito", sans-serif;
   font-weight: bold;
   font-size: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -547,7 +559,6 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* TAMBAHKAN ATURAN BARU INI */
 #whatsapp-button img {
   width: 28px;
   height: 28px;
@@ -577,7 +588,7 @@ body {
 }
 
 .footer-top-bar {
-  background-color: #ffd180; /* CHANGED */
+  background-color: #ffd200;
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -591,19 +602,19 @@ body {
 
 .footer-top-bar p {
   margin: 0;
-  font-family: "Chewy", cursive; /* CHANGED */
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 1.5rem;
-  color: #5d4037;
+  color: #001f3f;
 }
 
 .footer-main {
-  background-color: #5d4037; /* CHANGED */
+  background-color: #001f3f;
   padding: 40px 0 20px 0;
   text-align: center;
 }
 
 .footer-main h4 {
-  font-family: "Chewy", cursive; /* CHANGED */
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -615,7 +626,7 @@ body {
 }
 
 .marketplace-icons a:hover {
-  transform: scale(1.1) rotate(5deg); /* Cute hover */
+  transform: scale(1.1) rotate(5deg);
 }
 
 .marketplace-icons img {
@@ -627,12 +638,12 @@ body {
 
 .shop-now-btn {
   display: inline-block;
-  background-color: #ffab91; /* CHANGED */
+  background-color: #00aeef;
   color: #fff;
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
-  font-family: "Chewy", cursive;
+  font-family: "Lilita One", cursive; /* CHANGED */
   font-size: 1.5rem;
   margin-top: 30px;
   transition: all 0.3s ease;
@@ -640,13 +651,13 @@ body {
 }
 
 .shop-now-btn:hover {
-  background-color: #f89a7a;
+  background-color: #0095c7;
   color: #fff;
   transform: scale(1.05);
 }
 
 .footer-bottom {
-  background-color: #4e342e; /* CHANGED */
+  background-color: #001021;
   padding: 15px 0;
   font-size: 0.9rem;
   text-align: center;
