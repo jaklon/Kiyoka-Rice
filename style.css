@@ -1,34 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 
 /*
-  REFINED Brand Palette:
+  ELEGANT & CLASSIC Palette:
   - Background: #FFFFFF (White)
-  - Text/Primary: #001F3F (Dark Navy)
-  - Main Accent: #00AEEF (Bright Blue)
-  - Secondary Accent: #FFD200 (Golden Yellow)
-  - Light Background: #E6F7FF (Very Light Blue)
-  - Highlight Accent: #8BC34A (Vibrant Green)
+  - Text/Primary: #3D3A3A (Dark Charcoal)
+  - Main Accent: #9C5B7A (Dusty Rose)
+  - Secondary Accent: #BE8585 (Muted Pink-Beige)
+  - Button Accent: #655137 (Warm Brown)
+  - Footer BG: #E5A3A4 (Soft Pink)
 */
-.section {
-  padding: 0%;
-  overflow-x: hidden;
-  height: auto;
-}
 
 body {
   margin: 0;
-  font-family: "DM Serif Display", serif;
+  font-family: "Nunito", sans-serif; /* Fallback sans-serif for UI elements */
   background-color: #ffffff;
-  color: #001f3f;
+  color: #3d3a3a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.nav-link,
+.btn,
+.footer-top-bar p,
+.shop-now-btn,
+#whatsapp-button span {
+  font-family: "DM Serif Display", serif;
 }
 
 /* Navbar link styling */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e6f7ff;
+  border-bottom: 1px solid #f0e5e5;
 }
 
 .navbar-brand img {
@@ -36,195 +45,133 @@ body {
 }
 
 .navbar-nav .nav-link {
-  font-weight: 700;
+  font-weight: normal; /* Serif looks better with normal weight */
   font-size: 1.1rem;
-  color: #001f3f;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  color: #3d3a3a;
+  transition: color 0.3s ease;
   border-radius: 8px;
   padding: 8px 12px !important;
 }
 
 .navbar-nav .nav-link:hover,
 .nav-link.active {
-  color: #00aeef;
-  background-color: #e6f7ff;
+  color: #9c5b7a;
 }
 
-/* hero section css */
+.section {
+  padding: 80px 0;
+  overflow-x: hidden;
+}
+
+/* Hero & About Section with Full BG Image */
 #hero {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  min-height: 600px;
-  background-image: linear-gradient(
-      to top,
-      rgba(0, 174, 239, 0.1),
-      rgba(255, 255, 255, 0)
-    ),
-    url("/asset/Porang\ Rice\ bghero.png");
-  background-size: cover;
-  background-position: center;
-}
-
-#hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-product-img {
-  max-width: 100%;
   height: auto;
-  animation: float 6s ease-in-out infinite;
-}
-
-.hero-text-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 650px;
+  background-image: url("/asset/Porang Rice.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff; /* Fallback color */
 }
 
 /* === HEADLINE STYLING CONSOLIDATED === */
-#hero h1,
 #product h2,
-#why h2,
-.text-3xl.font-bold {
+#ulasan h2 {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
-  font-size: clamp(3.5rem, 10vw, 5rem);
+  font-size: clamp(3rem, 10vw, 4rem);
   line-height: 1.2;
   text-align: center;
-  padding-left: 0;
-}
-
-#hero h1 {
-  color: #ffffff;
-}
-
-#product h2,
-#why h2,
-.text-3xl.font-bold {
   color: #9c5b7a;
-  margin-bottom: 1rem !important; /* Adjusted margin */
+  margin-bottom: 1rem !important;
 }
 
-@media (max-width: 767.98px) {
-  #hero {
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 60px;
-    text-align: center;
-  }
-  .hero-product-img {
-    max-width: 70%;
-    margin-bottom: 30px;
-  }
+/* Sub-headline styling */
+#product h3,
+#ulasan .text-lg.leading-8 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #3d3a3a;
+}
+#ulasan .text-lg.leading-8 {
+  color: #6c757d; /* Grey color from original code */
 }
 
-/* === Chat Layout === */
-#about {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  min-height: 600px;
-  background-image: linear-gradient(
-      to top,
-      rgba(0, 174, 239, 0.1),
-      rgba(255, 255, 255, 0)
-    ),
-    url("/asset/Tahukah\ Kamu.png");
-  background-size: cover;
-  background-position: center;
-}
-
-#about .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* product section css */
+/* === Product Section Styling === */
 #product {
   background-color: #ffffff;
   position: relative;
 }
 
-#product h3,
-#why h3,
-.text-lg.leading-8 {
-  font-family: "DM Serif Display", serif;
-  font-weight: 700;
-  padding-bottom: 20px;
-  color: #001f3f;
-}
-
-#product p,
-#why p {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.1rem;
-  color: #001f3f;
-  font-style: normal;
-  margin-top: 10px;
-}
-
 .product-box {
   transition: all 0.3s ease;
-  border-radius: 25px;
-  background-color: #be858598;
-  color: #001f3f;
-  border: 1px solid #e6f7ff;
-  box-shadow: 0 8px 25px rgba(0, 174, 239, 0.08);
+  border-radius: 20px;
+  background-color: #be858525; /* Softer transparent version */
+  color: #3d3a3a;
+  border: 1px solid #e5a3a4;
+  box-shadow: 0 4px 15px rgba(190, 133, 133, 0.1);
+  padding: 1.5rem !important;
 }
 
 .product-box:hover {
-  transform: translateY(-8px) rotate(1deg);
-  box-shadow: 0 12px 30px rgba(0, 174, 239, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(190, 133, 133, 0.2);
 }
 
 .product-box h4 {
-  font-family: "DM Serif Display", serif;
   font-size: 1.8rem;
-  color: #000a39;
+  color: #655137;
 }
 
 .product-box p {
-  color: #001f3f;
+  font-family: "Nunito", sans-serif;
+  color: #3d3a3a;
   font-size: 1rem;
-  min-height: 80px; /* Ensures consistent height */
+  min-height: 80px;
 }
 .product-box .btn-primary {
-  background-color: #00aeef;
-  border-color: #00aeef;
+  background-color: #9c5b7a;
+  border-color: #9c5b7a;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   border-radius: 50px;
   padding: 10px 25px;
   transition: all 0.2s ease-in-out;
+  font-size: 1.1rem;
 }
 .product-box .btn-primary:hover {
-  background-color: #0095c7;
-  border-color: #0095c7;
-  transform: scale(1.1);
+  background-color: #655137;
+  border-color: #655137;
+  transform: scale(1.05);
 }
 
+/* Modal Styling */
 .modal-content {
   border-radius: 25px;
-  border: 2px solid #00aeef;
+  border: 2px solid #9c5b7a;
   background-color: #ffffff;
 }
 .modal-header {
-  background-color: #00aeef;
+  background-color: #9c5b7a;
   color: white;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
-  border-bottom: 1px solid #0095c7;
+  border-bottom: 1px solid #655137;
 }
 .modal-header .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 .modal-title {
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.modal-body {
+  font-family: "Nunito", sans-serif;
 }
 .modal-body .product-image-modal {
   max-height: 250px;
@@ -242,30 +189,23 @@ body {
   justify-content: center;
 }
 .modal-footer .btn-shop {
-  background-color: #00aeef;
+  background-color: #9c5b7a;
   color: white;
-  font-family: "Lilita One", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.3rem;
   padding: 10px 30px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 .modal-footer .btn-shop:hover {
-  background-color: #0095c7;
-  transform: scale(1.05) rotate(-2deg);
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-25px) rotate(5deg);
-  }
+  background-color: #655137;
+  transform: scale(1.05);
 }
 
 /* Review Scroller Section */
+#ulasan {
+  background-color: #f8f9fa;
+}
 .scroller-container {
   max-width: 1000px;
   margin-left: auto;
@@ -286,7 +226,6 @@ body {
     transparent
   );
 }
-
 .scroller-inner {
   display: flex;
   flex-wrap: nowrap;
@@ -294,11 +233,9 @@ body {
   gap: 1rem;
   animation: scroll 40s linear infinite;
 }
-
 .scroller-container:hover .scroller-inner {
   animation-play-state: paused;
 }
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -307,7 +244,6 @@ body {
     transform: translateX(-50%);
   }
 }
-
 .scroller-inner img {
   height: 400px;
   width: auto;
@@ -322,7 +258,7 @@ body {
   bottom: 25px;
   right: 25px;
   padding: 10px 20px;
-  background-color: #655137; /* Kept green for brand recognition */
+  background-color: #655137;
   color: white;
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -332,9 +268,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: "DM Serif Display", serif;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -359,10 +294,6 @@ body {
     padding: 0;
     gap: 0;
   }
-  #whatsapp-button svg {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 /* --- FOOTER STYLING --- */
@@ -386,7 +317,6 @@ body {
 
 .footer-top-bar p {
   margin: 0;
-  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   color: #001f3f;
 }
@@ -398,9 +328,10 @@ body {
 }
 
 .footer-main h4 {
-  font-family: "DM Serif Display", serif;
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .marketplace-icons a {
@@ -422,12 +353,11 @@ body {
 
 .shop-now-btn {
   display: inline-block;
-  background-color: #00aeef;
+  background-color: #9c5b7a;
   color: #fff;
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
-  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   margin-top: 30px;
   transition: all 0.3s ease;
@@ -435,14 +365,120 @@ body {
 }
 
 .shop-now-btn:hover {
-  background-color: #0095c7;
-  color: #fff;
+  background-color: #655137;
   transform: scale(1.05);
 }
 
 .footer-bottom {
-  background-color: #e5a3a4;
+  background-color: #d49394;
   padding: 15px 0;
   font-size: 0.9rem;
   text-align: center;
+}
+
+/* =================================== */
+/* === STYLING PANEL INTERAKTIF BARU === */
+/* =================================== */
+
+#about {
+  background-color: #ffffff;
+}
+
+#about .main-headline {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1.2;
+  text-align: center;
+  color: #9c5b7a;
+}
+
+#about .lead-text {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.interactive-panel {
+  background-color: #fdfcfa;
+  border: 1px solid #f0e5e5;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(190, 133, 133, 0.1);
+}
+
+/* Tombol Navigasi */
+.interactive-panel .nav-pills .nav-link {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.3rem;
+  color: #655137;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 0.8rem 1.8rem;
+  margin: 0 0.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.interactive-panel .nav-pills .nav-link.active,
+.interactive-panel .nav-pills .nav-link:hover {
+  color: #fff;
+  background-color: #9c5b7a;
+  border-color: #9c5b7a;
+}
+
+/* Konten Tab */
+.interactive-panel .tab-content {
+  padding: 2rem 1rem;
+}
+
+.interactive-panel .tab-pane h3 {
+  font-family: "DM Serif Display", serif;
+  color: #9c5b7a;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.interactive-panel .tab-pane p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #3d3a3a;
+}
+
+.interactive-panel .tab-pane .img-fluid {
+  max-width: 80%;
+  animation: fadeInZoom 0.8s ease-out;
+}
+
+.interactive-panel .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.interactive-panel .benefits-list li {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #3d3a3a;
+  display: flex;
+  align-items: center;
+}
+
+.interactive-panel .benefits-list li i {
+  color: #8bc34a; /* Warna hijau untuk ikon ceklis */
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

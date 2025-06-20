@@ -1,132 +1,82 @@
-// Menjalankan semua skrip setelah halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", function () {
-  // --- FUNGSI EFEK KETIK ---
-  function typeEffect(element, speed = 50) {
-    const text = element.getAttribute("data-text");
-    if (!text) return; // Keluar jika tidak ada data-text
-    let i = 0;
-    element.innerHTML = ""; // Kosongkan elemen sebelum memulai
+  /**
+   * Fungsi untuk animasi elemen saat scroll menggunakan Intersection Observer.
+   * Ini akan menambahkan kelas 'active' pada elemen dengan kelas '.reveal'
+   * ketika elemen tersebut masuk ke dalam viewport.
+   */
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
 
-    const interval = setInterval(() => {
-      if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-      } else {
-        clearInterval(interval);
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      {
+        threshold: 0.1, // Elemen dianggap terlihat jika 10% areanya masuk viewport
       }
-    }, speed);
+    );
+
+    reveals.forEach((reveal) => {
+      revealObserver.observe(reveal);
+    });
   }
 
-  // --- FUNGSI UNTUK MENAMPILKAN INFO ---
-  // Kode ini tidak diubah
-  function showInfo(title, event) {
-    const instructions = {
-      "Tahukah Kamu ?":
-        "Beras porang adalah pilihan cerdas bagi kamu yang peduli kesehatan. \nDibanding beras putih biasa, beras porang punya sejumlah keunggulan yang mengagumkan! \n\n悼 Lebih Rendah Kalori & Karbohidrat\n唱 Ramah untuk Penderita Diabetes\n嵯 Bikin Kenyang Lebih Lama\n諺 Tanpa Pengawet & Gluten-Free",
-      "Beras Porang VS Beras Biasa": "",
-    };
-    document
-      .querySelectorAll(".tip-card")
-      .forEach((card) => card.classList.remove("active"));
-    if (event) {
-      event.target.closest(".tip-card").classList.add("active");
-    } else {
-      const firstCard = document.querySelector(".tip-card");
-      if (firstCard) first - card.classList.add("active");
+  /**
+   * Fungsi untuk animasi section utama menggunakan GSAP dan ScrollTrigger.
+   * Ini akan memberikan efek fade-in dan slide-up pada section tertentu.
+   */
+  function initGsapAnimations() {
+    // Pastikan GSAP dan ScrollTrigger sudah dimuat
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
+      console.error("GSAP or ScrollTrigger is not loaded.");
+      return;
     }
-    const content = instructions[title] || "Informasi belum tersedia.";
-    document.querySelector(".instructions-text").innerHTML =
-      "<pre>" + content + "</pre>";
-  }
 
-  // --- PENGATURAN TOMBOL WHATSAPP ---
-  // UPDATED: Nomor telepon disamakan dengan yang ada di HTML untuk konsistensi
-  const phoneNumber = "6281234567890"; // Nomor dari HTML Anda
-  const message =
-    "Halo, saya tertarik dengan produk Kiyoka Rice. Bisa minta informasi lebih lanjut?";
-  const whatsappButton = document.getElementById("whatsapp-button");
-  if (whatsappButton) {
-    // Menambahkan pengecekan jika tombol ada
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    whatsappButton.href = whatsappUrl;
-  }
-
-  // --- BAGIAN BARU: ANIMASI SCROLL DENGAN GSAP ---
-  function initScrollAnimations() {
-    // Daftarkan plugin ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Animasi untuk bagian "About" yang lebih menarik
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      // Animasikan judulnya dulu
-      gsap.from("#about .section-title-alt", {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#about",
-          start: "top 80%", // Mulai animasi saat 80% bagian atas elemen masuk viewport
-        },
-      });
+    // Targetkan section yang ingin dianimasikan
+    const animatedSections = ["#product", "#ulasan"];
 
-      // Animasikan setiap bubble chat satu per satu
-      const chatBubbles = gsap.utils.toArray(".chat-bubble-wrapper");
-      chatBubbles.forEach((bubble, index) => {
-        gsap.from(bubble, {
-          opacity: 0,
-          y: 20,
-          duration: 0.6,
-          delay: index * 0.3, // Beri jeda agar muncul satu per satu
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: bubble,
-            start: "top 90%",
-          },
-        });
-      });
-    }
-
-    // 2. Animasi sederhana untuk section lainnya agar ada motion saat scroll
-    const otherSections = ["#product", "#why", ".py-12.sm\\:py-16.lg\\:py-20"]; // Selector ulasan diperbarui
-    otherSections.forEach((selector) => {
+    animatedSections.forEach((selector) => {
       const section = document.querySelector(selector);
       if (section) {
         gsap.from(section, {
           opacity: 0,
-          y: 30,
+          y: 50,
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
+            start: "top 85%", // Animasi dimulai saat bagian atas section 85% masuk viewport
           },
         });
       }
     });
   }
-  // --- END BAGIAN BARU ---
 
-  // --- INISIALISASI DAN EVENT LISTENERS ---
-
-  // 1. Jalankan efek ketik
-  document.querySelectorAll(".animated-text").forEach((el) => typeEffect(el));
-
-  // 2. Tampilkan info default (jika ada)
-  if (document.querySelector(".tip-card")) {
-    showInfo("Tahukah Kamu ?");
+  /**
+   * Fungsi untuk mengatur link pada tombol WhatsApp.
+   */
+  function setupWhatsAppButton() {
+    const whatsappButton = document.getElementById("whatsapp-button");
+    if (whatsappButton) {
+      const phoneNumber = "6281234567890"; // Ganti dengan nomor Anda
+      const message =
+        "Halo, saya tertarik dengan produk Kiyoka Rice. Bisa minta informasi lebih lanjut?";
+      const encodedMessage = encodeURIComponent(message);
+      whatsappButton.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    }
   }
 
-  // 3. Tambahkan event listener untuk kartu info
-  document.querySelectorAll(".tip-card").forEach((card) => {
-    card.addEventListener("click", function (event) {
-      const title = this.querySelector(".card-title").textContent;
-      showInfo(title, event);
-    });
-  });
+  // ======================================================
+  // --- INISIALISASI SEMUA FUNGSI ---
+  // ======================================================
 
-  // 4. Jalankan fungsi animasi scroll
-  initScrollAnimations();
+  revealOnScroll(); // Jalankan animasi untuk elemen '.reveal'
+  initGsapAnimations(); // Jalankan animasi untuk section utama
+  setupWhatsAppButton(); // Atur tombol WhatsApp
 });
