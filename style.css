@@ -66,8 +66,8 @@ p,
 /* Hero & About Section with Full BG Image */
 #hero {
   height: auto;
-  min-height: 250px;
-  background-image: url("/asset/Porang Rice.svg");
+  min-height: 800px;
+  background-image: url("/asset/background.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
