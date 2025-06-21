@@ -530,3 +530,93 @@ p,
     transform: scale(1);
   }
 }
+
+/* =================================== */
+/* === ACCORDION STYLING === */
+/* =================================== */
+
+#question {
+  background-image: url('asset/jepang.jpg'); /* Ganti dengan path gambar Anda */
+  background-size: cover; /* Membuat gambar menutupi seluruh area */
+  background-position: center center; /* Pusatkan gambar */
+  background-repeat: no-repeat; /* Hindari pengulangan gambar */
+  background-attachment: fixed; /* (Opsional) Membuat gambar tetap saat discroll */
+
+  padding: 80px 0;
+  position: relative; /* Penting untuk overlay jika digunakan */
+}
+
+/* (Opsional) Tambahkan overlay untuk meningkatkan keterbacaan teks di atas gambar */
+#question::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Pastikan overlay di bawah konten accordion */
+}
+
+#question .accordion {
+  position: relative; /* Pastikan accordion berada di atas overlay */
+  z-index: 2;
+  /* Properti accordion lainnya tetap sama */
+  --bs-accordion-border-color: #e5a3a4;
+  --bs-accordion-border-radius: 15px;
+  --bs-accordion-inner-border-radius: 12px;
+  --bs-accordion-active-bg: #be858525;
+  --bs-accordion-active-color: #655137;
+  --bs-accordion-bg: #ffffff;
+  --bs-accordion-color: #3d3a3a;
+}
+
+#question .accordion-item {
+  border: 1px solid var(--bs-accordion-border-color);
+  margin-bottom: 10px;
+  border-radius: var(--bs-accordion-border-radius);
+  overflow: hidden;
+}
+
+#question .accordion-header {
+  background-color: var(--bs-accordion-bg);
+}
+
+#question .accordion-button {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.3rem;
+  color: var(--bs-accordion-color);
+  background-color: var(--bs-accordion-bg);
+  padding: 0.7rem 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: var(--bs-accordion-border-radius);
+}
+
+#question .accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: var(--bs-accordion-active-bg);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+#question .accordion-button:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#question .accordion-button::after {
+  filter: brightness(0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+#question .accordion-button:not(.collapsed)::after {
+  filter: brightness(0.8) sepia(1) saturate(10) hue-rotate(180deg);
+  transform: var(--bs-accordion-btn-icon-transform);
+}
+
+#question .accordion-body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #3d3a3a;
+  padding: 0.7rem 1.5rem 0.9rem 1.5rem;
+  background-color: var(--bs-accordion-active-bg);
+  border-top: 1px solid var(--bs-accordion-border-color);
+}
