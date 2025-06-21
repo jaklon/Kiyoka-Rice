@@ -1,427 +1,225 @@
-@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Chewy&family=DynaPuff:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
-/* NEW: Import font Nunito yang lebih lembut untuk teks */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 
 /*
-  CUTE Color Palette (New):
-  - Background: #FFF8E1 (Creamy White)
-  - Text/Primary: #5D4037 (Soft Brown)
-  - Main Accent: #FFAB91 (Pastel Peach)
-  - Secondary Accent: #FFD180 (Soft Orange)
-  - Tertiary Accent: #A5D6A7 (Soft Green)
-  - White: #FFFFFF
+  ELEGANT & CLASSIC Palette:
+  - Background: #FFFFFF (White)
+  - Text/Primary: #3D3A3A (Dark Charcoal)
+  - Main Accent: #9C5B7A (Dusty Rose)
+  - Secondary Accent: #BE8585 (Muted Pink-Beige)
+  - Button Accent: #655137 (Warm Brown)
+  - Footer BG: #E5A3A4 (Soft Pink)
 */
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif; /* NEW: Font lebih lembut */
-  background-color: #fff8e1; /* CHANGED */
-  color: #5d4037; /* CHANGED */
+  font-family: "Nunito", sans-serif; /* Fallback sans-serif for UI elements */
+  background-color: #ffffff;
+  color: #3d3a3a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.nav-link,
+.btn,
+.footer-top-bar p,
+.shop-now-btn,
+#whatsapp-button span {
+  font-family: "DM Serif Display", serif;
 }
 
 /* Navbar link styling */
 .navbar {
-  background-color: rgba(
-    255,
-    248,
-    225,
-    0.8
-  ) !important; /* CHANGED: Warna krem transparan */
+  background-color: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f0e5e5;
 }
 
-.navbar-brand {
-  font-family: "Chewy", cursive; /* CHANGED */
-  font-size: 1.8rem;
-  color: #5d4037 !important; /* CHANGED */
+.navbar-brand img {
+  width: 65px;
 }
 
 .navbar-nav .nav-link {
-  font-weight: 700;
-  font-size: 1.1rem; /* Slightly larger */
-  color: #5d4037; /* CHANGED */
+  font-weight: normal; /* Serif looks better with normal weight */
+  font-size: 1.1rem;
+  color: #3d3a3a;
   transition: color 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 12px !important;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #ffab91; /* CHANGED */
+.navbar-nav .nav-link:hover,
+.nav-link.active {
+  color: #9c5b7a;
 }
 
 .section {
   padding: 80px 0;
   overflow-x: hidden;
-  height: auto;
 }
 
-/* hero section css */
 #hero {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  min-height: 600px;
-  background-image: linear-gradient(to top, rgba(255, 248, 225, 0.1)),
-    url("asset/jepangbg.jpg");
-  background-size: cover;
-  background-position: center;
-}
+  width: 100%;
+  min-height: 150vh; /* Bisa 200vh kalau ingin lebih panjang */
+  background-repeat: no-repeat;
+  background-size: contain; /* Gambar tetap proporsional */
+  background-position: top center;
+  background-color: #ffffff;
 
-#hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-product-img {
-  max-width: 100%;
-  height: auto;
-  animation: float 6s ease-in-out infinite;
-}
-
-.hero-text-col {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-#hero h1 {
-  font-family: "Knewave", cursive; /* CHANGED */
-  font-weight: 400;
-  -webkit-text-stroke: 3px #5d4037; /* CHANGED */
-  background: linear-gradient(to top, #ffd180, #fff); /* CHANGED */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  line-height: 1.2;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: px; /* Ruang kosong bawah */
   text-align: center;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
-  padding-left: 0;
-}
-
-#hero p {
-  font-family: "Nunito", sans-serif; /* CHANGED */
-  font-weight: 800; /* Extra bold for readability */
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  color: #ffffff;
-  margin-top: 20px;
-  /* FIXED: Added a stroke for high contrast */
-  -webkit-text-stroke: 1px #5d4037;
-  text-stroke: 1px #5d4037;
-  text-shadow: 3px 3px 6px rgba(93, 64, 55, 0.8); /* Stronger shadow */
-  text-align: center;
-  padding-left: 0;
-}
-
-@media (max-width: 767.98px) {
-  #hero {
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 60px;
-    text-align: center;
-  }
-  .hero-product-img {
-    max-width: 70%;
-    margin-bottom: 30px;
-  }
-}
-
-/* === Chat Layout === */
-#about {
-  background-color: navajowhite; /* CHANGED */
   overflow: hidden;
 }
 
-#about .section-title-alt {
-  font-family: "Chewy", cursive; /* CHANGED */
-  text-align: left;
-  font-size: clamp(2.5rem, 7vw, 3.8rem);
-  color: peru;
-  text-shadow: 3px 3px 0 black;
-  /* FIXED: Removed opacity and transform so it's visible by default */
-}
-
-.about-info-panel {
-    background-color: #f0f0f0; /* Changed to a lighter grey for better contrast against navajowhite */
-    padding: 30px; /* Increased padding to give text more space */
-    border-radius: 20px; /* Menambahkan border-radius agar sudut tidak terlalu tajam sebelum mask */
-    position: relative; /* Penting untuk positioning mask */
-    overflow: hidden; /* Penting agar mask bekerja dengan baik */
-
-
-}
-
-
-.info-box-question {
-  background-color: #ffd180; /* CHANGED */
-  color: #5d4037;
-  font-family: "Chewy", cursive; /* CHANGED */
-  font-size: 28px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  position: relative;
-  z-index: 4;
-  margin-left: 20px;
-  margin-bottom: -20px;
-  transform: translateY(20px) rotate(-3deg);
-  transition: transform 0.3s ease;
-}
-
-.info-box-question:hover {
-  transform: translateY(15px) rotate(0deg);
-}
-
-.about-description {
-  font-size: 1.1rem;
-  color: #5d4037;
-  margin-bottom: 2rem;
-}
-
-.about-benefits-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-benefits-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-
-.about-benefits-list i {
-  font-size: 1.8rem;
-  color: #ffab91; /* CHANGED */
-  margin-top: 5px;
-}
-
-.about-benefits-list span {
-  font-size: 1rem;
-  color: #5d4037;
-  line-height: 1.4;
-}
-
-.chat-container {
-  max-width: none;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  font-size: larger;
-}
-
-.chat-bubble-wrapper {
-  display: flex;
-  align-items: flex-end;
-  gap: 15px;
-  max-width: 90%;
-  /* FIXED: Removed opacity and transform so it's visible by default */
-}
-
-.chat-bubble-wrapper.left {
-    align-self: flex-start;
-    margin-left: 20px; /* Tambahkan jarak dari sisi kiri jika perlu */
-}
-
-.chat-bubble-wrapper.right {
-  align-self: flex-end;
-  flex-direction: row-reverse;
-}
-
-.chat-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  flex-shrink: 0;
-}
-
-.chat-bubble {
-  border-radius: 25px;
-  padding: 20px 25px;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.hero-img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
-.chat-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: 15px;
-  width: 0;
-  height: 0;
-  border: 15px solid transparent;
-  border-bottom-width: 0;
+.hero-content {
+  max-width: 600px;
+  padding: 1rem;
+  color: #3d3a3a;
 }
 
-.chat-bubble-wrapper.left .chat-bubble {
-    background: #A5D6A7; /* Warna hijau seperti pada gambar */
-    border-top-left-radius: 20px; /* Sudut melengkung */
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 5px; /* Sudut kanan bawah lebih kecil untuk efek gelembung */
-    padding: 20px 25px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    font-family: "Nunito", sans-serif; /* Sesuaikan font jika perlu */
-    color: #5D4037; /* Warna teks agar kontras dengan latar hijau */
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #9c5b7a;
+  font-family: "DM Serif Display", serif;
 }
 
-.chat-bubble-wrapper.left .chat-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -15px; /* Posisi ekor di bawah */
-    left: 20px; /* Sesuaikan posisi ekor ke kiri */
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #A5D6A7; /* Warna ekor sama dengan latar */
-}
-
-.chat-bubble-wrapper.right .chat-bubble {
-  background: beige; /* CHANGED */
-  border-top-right-radius: 5px;
-}
-.chat-bubble-wrapper.right .chat-bubble::after {
-  right: -15px;
-  border-left-color: beige; /* CHANGED */
-}
-
-.chat-title {
-  font-family: "Chewy", cursive; /* CHANGED */
-  font-weight: 400;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: #5d4037;
-}
-
-.chat-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.chat-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-.chat-list i {
-  color: #ffab91; /* CHANGED */
-  font-size: 1.3rem;
-}
-
-/* product section css */
-/* product section css */
-#product {
-  background: linear-gradient(to bottom, #fff8e1, #ffab91 150%);
-  position: relative;
-}
-
-#product h2,
-#why h2,
-.text-3xl.font-bold {
-  font-family: "Knewave", cursive;
-  -webkit-text-stroke: 3px #5d4037;
-  font-size: clamp(3rem, 10vw, 4.5rem);
-  font-weight: 400;
-  background: linear-gradient(to top, #ffd180, #fff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  padding-left: 0px;
-}
-
-#product h3,
-.text-lg.leading-8 {
+.hero-content p {
   font-family: "Nunito", sans-serif;
-  font-weight: bold;
-  padding-bottom: 20px;
-  color: #5d4037;
+  font-size: 1.2rem;
+  color: #3d3a3a;
+  margin-top: 1rem;
 }
 
-#product p,
-#why p {
-  font-size: 1.1rem;
-  color: #5d4037;
-  padding-left: 0px;
-  padding-right: 0px;
-  font-style: normal;
-  align-items: center;
-  margin-top: 10px;
-  font-weight: normal;
+.hero-content .btn {
+  margin-top: 2rem;
+  padding: 12px 30px;
+  border-radius: 50px;
+  background-color: #9c5b7a;
+  color: white;
+  border: none;
+}
+
+
+@media (max-width: 576px) {
+  #hero {
+    background-size: 120%;
+    background-position: top center;
+  }
+}
+
+/* === HEADLINE STYLING CONSOLIDATED === */
+#product h2,
+#ulasan h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1.2;
+  text-align: center;
+  color: #9c5b7a;
+  margin-bottom: 1rem !important;
+}
+
+/* Sub-headline styling */
+#product h3,
+#ulasan .text-lg.leading-8 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #3d3a3a;
+}
+#ulasan .text-lg.leading-8 {
+  color: #6c757d; /* Grey color from original code */
+}
+
+/* === Product Section Styling === */
+#product {
+  background-color: #ffffff;
+  position: relative;
 }
 
 .product-box {
   transition: all 0.3s ease;
-  border-radius: 25px;
-  background-color: #ffd180; /* Warna kuning lembut */
-  color: #5d4037;
-  border: 2px solid #ffab91;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  background-color: #be858525; /* Softer transparent version */
+  color: #3d3a3a;
+  border: 1px solid #e5a3a4;
+  box-shadow: 0 4px 15px rgba(190, 133, 133, 0.1);
+  padding: 1.5rem !important;
 }
 
 .product-box:hover {
-  transform: translateY(-8px) rotate(2deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(190, 133, 133, 0.2);
 }
 
 .product-box h4 {
-  font-family: "Chewy", cursive;
   font-size: 1.8rem;
+  color: #655137;
 }
 
 .product-box p {
-  color: #5d4037;
+  font-family: "Nunito", sans-serif;
+  color: #3d3a3a;
   font-size: 1rem;
+  min-height: 80px;
 }
 .product-box .btn-primary {
-  background-color: indianred; /* UBAH INI: Warna hijau lembut */
-  border-color: #A5D6A7; /* UBAH INI: Warna border yang sama */
+  background-color: #9c5b7a;
+  border-color: #9c5b7a;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   border-radius: 50px;
   padding: 10px 25px;
   transition: all 0.2s ease-in-out;
+  font-size: 1.1rem;
 }
 .product-box .btn-primary:hover {
-  background-color: #8CC08E; /* UBAH INI: Warna hijau yang sedikit lebih gelap untuk hover */
-  border-color: #8CC08E; /* UBAH INI: Warna border yang sama untuk hover */
-  transform: scale(1.1);
+  background-color: #655137;
+  border-color: #655137;
+  transform: scale(1.05);
 }
 
+/* Modal Styling */
 .modal-content {
   border-radius: 25px;
-  border: 3px solid #ffd180;
-  background-color: #fff8e1;
+  border: 2px solid #9c5b7a;
+  background-color: #ffffff;
 }
 .modal-header {
-  background-color: #ffab91; /* CHANGED */
+  background-color: #9c5b7a;
   color: white;
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
-  border-bottom: none;
+  border-bottom: 1px solid #655137;
 }
 .modal-header .btn-close {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 .modal-title {
-  font-family: "Chewy", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.modal-body {
+  font-family: "Nunito", sans-serif;
 }
 .modal-body .product-image-modal {
   max-height: 250px;
@@ -439,60 +237,25 @@ body {
   justify-content: center;
 }
 .modal-footer .btn-shop {
-  background-color: #ffab91;
+  background-color: #9c5b7a;
   color: white;
-  font-family: "Chewy", cursive;
+  font-family: "DM Serif Display", serif;
   font-size: 1.3rem;
   padding: 10px 30px;
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 .modal-footer .btn-shop:hover {
-  background-color: #f89a7a;
-  transform: scale(1.05) rotate(-2deg);
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-25px) rotate(5deg);
-  }
-}
-
-/* why section css */
-#why {
-  background-color: #fff8e1; /* CHANGED */
-  /* FIXED: Removed opacity and transform so it's visible by default */
-}
-
-.carousel-item img.carousel-image {
-  max-height: 580px;
-  object-fit: contain;
-  width: 100%;
-  border-radius: 25px;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 171, 145, 0.7); /* CHANGED */
-  border-radius: 50%;
-}
-
-.carousel-control-prev {
-  left: 20px;
-}
-.carousel-control-next {
-  right: 20px;
+  background-color: #655137;
+  transform: scale(1.05);
 }
 
 /* Review Scroller Section */
+#ulasan {
+  background-color: #f8f9fa;
+}
 .scroller-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -511,7 +274,6 @@ body {
     transparent
   );
 }
-
 .scroller-inner {
   display: flex;
   flex-wrap: nowrap;
@@ -519,11 +281,9 @@ body {
   gap: 1rem;
   animation: scroll 40s linear infinite;
 }
-
 .scroller-container:hover .scroller-inner {
   animation-play-state: paused;
 }
-
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -532,7 +292,6 @@ body {
     transform: translateX(-50%);
   }
 }
-
 .scroller-inner img {
   height: 400px;
   width: auto;
@@ -547,7 +306,7 @@ body {
   bottom: 25px;
   right: 25px;
   padding: 10px 20px;
-  background-color: #4dc247;
+  background-color: #655137;
   color: white;
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -557,9 +316,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: "Nunito", sans-serif; /* CHANGED */
-  font-weight: bold;
-  font-size: 1rem;
+  font-weight: normal;
+  font-size: 1.1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -568,7 +326,6 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* TAMBAHKAN ATURAN BARU INI */
 #whatsapp-button img {
   width: 28px;
   height: 28px;
@@ -585,10 +342,6 @@ body {
     padding: 0;
     gap: 0;
   }
-  #whatsapp-button svg {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 /* --- FOOTER STYLING --- */
@@ -598,7 +351,7 @@ body {
 }
 
 .footer-top-bar {
-  background-color: #ffd180; /* CHANGED */
+  background-color: #ffd200;
   padding: 10px 0;
   display: flex;
   align-items: center;
@@ -612,21 +365,21 @@ body {
 
 .footer-top-bar p {
   margin: 0;
-  font-family: "Chewy", cursive; /* CHANGED */
   font-size: 1.5rem;
-  color: #5d4037;
+  color: #001f3f;
 }
 
 .footer-main {
-  background-color: #5d4037; /* CHANGED */
+  background-color: #e5a3a4;
   padding: 40px 0 20px 0;
   text-align: center;
 }
 
 .footer-main h4 {
-  font-family: "Chewy", cursive; /* CHANGED */
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .marketplace-icons a {
@@ -636,7 +389,7 @@ body {
 }
 
 .marketplace-icons a:hover {
-  transform: scale(1.1) rotate(5deg); /* Cute hover */
+  transform: scale(1.1) rotate(5deg);
 }
 
 .marketplace-icons img {
@@ -648,12 +401,11 @@ body {
 
 .shop-now-btn {
   display: inline-block;
-  background-color: #ffab91; /* CHANGED */
+  background-color: #9c5b7a;
   color: #fff;
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
-  font-family: "Chewy", cursive;
   font-size: 1.5rem;
   margin-top: 30px;
   transition: all 0.3s ease;
@@ -661,14 +413,120 @@ body {
 }
 
 .shop-now-btn:hover {
-  background-color: #f89a7a;
-  color: #fff;
+  background-color: #655137;
   transform: scale(1.05);
 }
 
 .footer-bottom {
-  background-color: #4e342e; /* CHANGED */
+  background-color: #d49394;
   padding: 15px 0;
   font-size: 0.9rem;
   text-align: center;
+}
+
+/* =================================== */
+/* === STYLING PANEL INTERAKTIF BARU === */
+/* =================================== */
+
+#about {
+  background-color: #ffffff;
+}
+
+#about .main-headline {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1.2;
+  text-align: center;
+  color: #9c5b7a;
+}
+
+#about .lead-text {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.interactive-panel {
+  background-color: #fdfcfa;
+  border: 1px solid #f0e5e5;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(190, 133, 133, 0.1);
+}
+
+/* Tombol Navigasi */
+.interactive-panel .nav-pills .nav-link {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.3rem;
+  color: #655137;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 0.8rem 1.8rem;
+  margin: 0 0.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.interactive-panel .nav-pills .nav-link.active,
+.interactive-panel .nav-pills .nav-link:hover {
+  color: #fff;
+  background-color: #9c5b7a;
+  border-color: #9c5b7a;
+}
+
+/* Konten Tab */
+.interactive-panel .tab-content {
+  padding: 2rem 1rem;
+}
+
+.interactive-panel .tab-pane h3 {
+  font-family: "DM Serif Display", serif;
+  color: #9c5b7a;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.interactive-panel .tab-pane p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #3d3a3a;
+}
+
+.interactive-panel .tab-pane .img-fluid {
+  max-width: 80%;
+  animation: fadeInZoom 0.8s ease-out;
+}
+
+.interactive-panel .benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.interactive-panel .benefits-list li {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #3d3a3a;
+  display: flex;
+  align-items: center;
+}
+
+.interactive-panel .benefits-list li i {
+  color: #8bc34a; /* Warna hijau untuk ikon ceklis */
+  margin-right: 0.8rem;
+  font-size: 1.5rem;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
