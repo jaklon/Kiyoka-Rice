@@ -146,7 +146,10 @@ p,
   font-size: clamp(2.5rem, 6vw, 5rem); /* Ukuran font responsif */
   font-weight: 900;
   line-height: 1;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+
+  /* --- PERBAIKAN DI SINI --- */
+  /* Format yang benar: [jarak-kanan] [jarak-bawah] [blur] [warna] */
+  text-shadow: 2px 2px 3px gray;
 }
 
 /* Logo di kanan atas */
@@ -205,15 +208,21 @@ p,
     background-position: top center;
 =======
 /* Penyesuaian untuk layar kecil (mobile) */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   /* === PERUBAHAN DI SINI === */
+  .products-container {
+    display: flex; /* Mengaktifkan Flexbox */
+    flex-direction: column; /* Mengatur item agar tersusun vertikal (ke bawah) */
+    align-items: center; /* Memusatkan semua item secara horizontal */
+    padding: 2rem 1rem; /* Memberi jarak dari tepi layar (atas-bawah 2rem, kiri-kanan 1rem) */
+    gap: 2.5rem; /* Memberi jarak yang KONSISTEN antar setiap item */
+  }
+
   .product-item {
-    /* display: none; <-- Baris ini dihapus agar produk tetap tampil */
-    width: 28%; /* Ukuran produk disesuaikan untuk mobile */
-    max-width: 110px;
-    left: 50%; /* Pusatkan produk secara horizontal */
-    transform: translateX(-50%);
-    right: auto; /* Hapus aturan 'right' dari versi desktop */
+    position: static; /* Kembalikan ke alur dokumen normal */
+    transform: none; /* Hapus transform */
+    width: 110%; /* Produk bisa dibuat sedikit lebih besar */
+    max-width: 500px; /* Batas maksimal ukuran produk */
   }
 
   /* Atur ulang posisi vertikal untuk setiap produk */
@@ -228,12 +237,12 @@ p,
   }
 
   .brand-text {
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static; /* Kembalikan ke alur dokumen normal */
+    transform: none; /* Hapus transform */
+    width: 100%;
     text-align: center;
-    width: 90%;
-    bottom: auto; /* Hapus aturan 'bottom' dari versi desktop */
+    font-size: 2.5rem; /* Perbesar sedikit agar lebih menonjol */
+    margin-bottom: 1rem; /* Beri sedikit jarak ekstra setelah judul */
   }
 
   .brand-logo {
@@ -241,6 +250,90 @@ p,
     display: none;
 >>>>>>> f80c10d51d1320398dc1d9bc85b75d79fcedc2ed
   }
+}
+
+/* =============================================== */
+/* ==       TAMPILAN KHUSUS IPAD / TABLET       == */
+/* =============================================== */
+
+/* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
+@media (min-width: 769px) and (max-width: 1186px) {
+  /* Menyesuaikan ukuran dasar produk untuk tablet */
+  .product-item {
+    width: 110%;
+    max-width: 670px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+  }
+
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
+  #product1 {
+    top: 10%;
+    left: -3%;
+    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
+    z-index: 1; /* Ditempatkan paling belakang */
+  }
+  #product1:hover {
+    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
+    z-index: 10;
+  }
+
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 29%;
+    left: 47%;
+    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
+    transform: translateX(-50%) scale(0.9);
+    z-index: 2; /* Di tengah */
+  }
+  #product2:hover {
+    transform: translateX(-50%) scale(0.95) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    top: auto; /* Hapus properti top agar tidak konflik */
+    bottom: 14%;
+    right: 1%;
+    transform: scale(1); /* Ukuran normal, tampak paling depan */
+    z-index: 3; /* Ditempatkan paling depan */
+  }
+  #product3:hover {
+    transform: scale(1.05) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 8%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
+  .brand-logo {
+    top: 8%;
+    right: 5%;
+    width: clamp(160px, 15vw, 230px);
+  }
+}
+
+.sehat {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1.2;
+  text-align: center;
+  color: #268fcf;
+  margin-bottom: 1rem !important;
 }
 
 /* === HEADLINE STYLING CONSOLIDATED === */
