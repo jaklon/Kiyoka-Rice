@@ -63,27 +63,6 @@ p,
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-#hero {
-  width: 100%;
-  min-height: 150vh; /* Bisa 200vh kalau ingin lebih panjang */
-  background-repeat: no-repeat;
-  background-size: contain; /* Gambar tetap proporsional */
-  background-position: top center;
-  background-color: #ffffff;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: px; /* Ruang kosong bawah */
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-=======
 /* Hero & About Section with Full BG Image */
 
 .hero-section {
@@ -167,46 +146,10 @@ p,
 
 .brand-logo-img {
   width: 100%; /* Gambar mengisi seluruh container */
->>>>>>> f80c10d51d1320398dc1d9bc85b75d79fcedc2ed
   height: auto;
   display: block;
 }
 
-<<<<<<< HEAD
-.hero-content {
-  max-width: 600px;
-  padding: 1rem;
-  color: #3d3a3a;
-}
-
-.hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  color: #9c5b7a;
-  font-family: "DM Serif Display", serif;
-}
-
-.hero-content p {
-  font-family: "Nunito", sans-serif;
-  font-size: 1.2rem;
-  color: #3d3a3a;
-  margin-top: 1rem;
-}
-
-.hero-content .btn {
-  margin-top: 2rem;
-  padding: 12px 30px;
-  border-radius: 50px;
-  background-color: #9c5b7a;
-  color: white;
-  border: none;
-}
-
-
-@media (max-width: 576px) {
-  #hero {
-    background-size: 120%;
-    background-position: top center;
-=======
 /* Penyesuaian untuk layar kecil (mobile) */
 @media (max-width: 769px) {
   /* === PERUBAHAN DI SINI === */
@@ -248,7 +191,6 @@ p,
   .brand-logo {
     /* Logo disembunyikan di mobile agar tidak terlalu ramai */
     display: none;
->>>>>>> f80c10d51d1320398dc1d9bc85b75d79fcedc2ed
   }
 }
 
@@ -744,10 +686,6 @@ p,
     transform: scale(1);
   }
 }
-
-/* =================================== */
-/* === ACCORDION STYLING === */
-/* =================================== */
 
 #question {
   background-image: url('asset/jepang.jpg'); /* Ganti dengan path gambar Anda */
