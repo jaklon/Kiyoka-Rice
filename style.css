@@ -18,6 +18,21 @@ body {
   color: #3d3a3a;
 }
 
+body {
+  /* Ganti kursor default di seluruh halaman */
+  cursor: url("/asset/kursor.svg"), auto;
+}
+
+/* Ganti kursor untuk semua link, tombol, dan elemen yang bisa diklik */
+a,
+button,
+.btn,
+.nav-link,
+.product-box,
+.marketplace-icons a {
+  cursor: url("/asset/kursorclick.svg") 16 2, pointer; /* Fallback ke ikon tangan jika gambar gagal */
+}
+
 h1,
 h2,
 h3,
@@ -56,6 +71,74 @@ p,
 .navbar-nav .nav-link:hover,
 .nav-link.active {
   color: #9c5b7a;
+}
+
+/* ================================== */
+/* === STYLING TOMBOL SWITCH BAHASA === */
+/* ================================== */
+
+.language-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 80px; /* Lebar saklar */
+  height: 40px; /* Tinggi saklar */
+  background-color: #e5d9d7; /* Warna latar belakang saat tidak aktif */
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: 2px solid #be8585;
+}
+
+.language-switch:hover {
+  background-color: #d4c8c6;
+}
+
+/* Lingkaran yang bergeser (thumb) */
+.switch-thumb {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Efek pergerakan halus */
+}
+
+/* Teks di dalam saklar */
+.lang-text {
+  flex: 1;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  z-index: 1; /* Agar teks di atas thumb */
+  transition: color 0.3s ease;
+}
+
+/* --- Posisi dan Warna untuk setiap state --- */
+
+/* State: Bahasa Indonesia Aktif */
+.language-switch.id-active .switch-thumb {
+  transform: translateX(4px); /* Posisi thumb di kiri */
+}
+.language-switch.id-active .lang-id {
+  color: #9c5b7a; /* Warna teks aktif */
+}
+.language-switch.id-active .lang-en {
+  color: #fff; /* Warna teks tidak aktif */
+}
+
+/* State: Bahasa Inggris Aktif */
+.language-switch.en-active .switch-thumb {
+  transform: translateX(41px); /* Posisi thumb di kanan (80px - 32px - 4px) */
+}
+.language-switch.en-active .lang-id {
+  color: #fff; /* Warna teks tidak aktif */
+}
+.language-switch.en-active .lang-en {
+  color: #9c5b7a; /* Warna teks aktif */
 }
 
 .section {
@@ -227,7 +310,7 @@ p,
 
   /* Produk 2: Tengah */
   #product2 {
-    top: 29%;
+    top: 33%;
     left: 47%;
     /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
     transform: translateX(-50%) scale(0.9);
@@ -255,7 +338,7 @@ p,
 
   /* Teks utama di kiri bawah */
   .brand-text {
-    bottom: 8%;
+    bottom: 6%;
     left: 3%;
     font-size: clamp(3rem, 7vw, 5rem);
   }

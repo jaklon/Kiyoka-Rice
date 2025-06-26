@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function setupWhatsAppButton() {
     const whatsappButton = document.getElementById("whatsapp-button");
     if (whatsappButton) {
-      const phoneNumber = "6281234567890"; // Ganti dengan nomor Anda
+      const phoneNumber = "6285770102000"; // Ganti dengan nomor Anda
       const message =
         "Halo, saya tertarik dengan produk Kiyoka Rice. Bisa minta informasi lebih lanjut?";
       const encodedMessage = encodeURIComponent(message);
