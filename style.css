@@ -202,7 +202,7 @@ p,
 /* Teks utama di kiri bawah */
 .brand-text {
   position: absolute;
-  bottom: 8%;
+  bottom: 3%;
   left: 5%;
   color: white;
   font-size: clamp(2.5rem, 6vw, 5rem); /* Ukuran font responsif */
@@ -234,7 +234,7 @@ p,
 }
 
 /* Penyesuaian untuk layar kecil (mobile) */
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   /* === PERUBAHAN DI SINI === */
   .products-container {
     display: flex; /* Mengaktifkan Flexbox */
@@ -271,7 +271,7 @@ p,
     margin-bottom: 1rem; /* Beri sedikit jarak ekstra setelah judul */
   }
 
- #brandText .vert-char {
+  #brandText .vert-char {
     display: block;
   }
 
@@ -283,10 +283,10 @@ p,
     color: #268fcf !important;
   }
 
-   #brandText.vertical-ready .sehat {
+  #brandText.vertical-ready .sehat {
     color: #268fcf !important;
   }
-  
+
   .brand-logo {
     /* Logo disembunyikan di mobile agar tidak terlalu ramai */
     display: none;
@@ -298,7 +298,7 @@ p,
 /* =============================================== */
 
 /* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
-@media (min-width: 769px) and (max-width: 1186px) {
+@media (min-width: 1189px) and (max-width: 1495px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 110%;
@@ -340,7 +340,7 @@ p,
   /* Produk 3: Kanan Bawah (Paling Dekat) */
   #product3 {
     top: auto; /* Hapus properti top agar tidak konflik */
-    bottom: 14%;
+    bottom: 10%;
     right: 1%;
     transform: scale(1); /* Ukuran normal, tampak paling depan */
     z-index: 3; /* Ditempatkan paling depan */
@@ -354,7 +354,76 @@ p,
 
   /* Teks utama di kiri bawah */
   .brand-text {
-    bottom: 6%;
+    bottom: 3%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
+  .brand-logo {
+    top: 8%;
+    right: 5%;
+    width: clamp(160px, 15vw, 230px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1189px) {
+  /* Menyesuaikan ukuran dasar produk untuk tablet */
+  .product-item {
+    width: 110%;
+    max-width: 520px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+  }
+
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
+  #product1 {
+    top: 10%;
+    left: -3%;
+    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
+    z-index: 1; /* Ditempatkan paling belakang */
+  }
+  #product1:hover {
+    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
+    z-index: 10;
+  }
+
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 33%;
+    left: 49%;
+    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
+    transform: translateX(-50%) scale(0.9);
+    z-index: 2; /* Di tengah */
+  }
+  #product2:hover {
+    transform: translateX(-50%) scale(0.95) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    top: auto; /* Hapus properti top agar tidak konflik */
+    bottom: 10%;
+    right: -4%;
+    transform: scale(1); /* Ukuran normal, tampak paling depan */
+    z-index: 3; /* Ditempatkan paling depan */
+  }
+  #product3:hover {
+    transform: scale(1.05) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 3%;
     left: 3%;
     font-size: clamp(3rem, 7vw, 5rem);
   }
@@ -973,3 +1042,90 @@ p,
   border-top: 1px solid var(--bs-accordion-border-color);
 }
 
+/* Dalam file style.css */
+
+/* ... kode yang sudah ada ... */
+
+/* Sesuaikan styling untuk maskot di bagian About */
+#about .col-md-8 {
+  /* Pastikan kontainer teks dan maskot memiliki posisi relatif untuk penempatan absolut jika diperlukan,
+     atau jika menggunakan float, ini akan menjadi konteks pemindahan float. */
+  position: relative;
+  /* Tambahkan overflow: hidden; jika ada elemen floated yang menyebabkan tata letak rusak di bawahnya */
+  overflow: hidden;
+}
+
+#about .main-headline {
+  /* Jaga agar teks tetap di kiri atau tengah */
+  text-align: left; /* Mengatur rata kiri untuk teks utama */
+  margin-right: 280px; /* Memberi ruang di kanan untuk maskot */
+  display: inline-block; /* Memungkinkan float bekerja di sampingnya */
+  vertical-align: top; /* Sejajarkan ke atas jika ada elemen inline-block lain */
+  width: calc(
+    100% - 280px
+  ); /* Sesuaikan lebar agar tidak tumpang tindih dengan maskot */
+}
+
+#about .lead-text {
+  /* Juga sesuaikan lead-text agar tidak tumpang tindih jika perlu */
+  text-align: left; /* Mengatur rata kiri untuk teks lead */
+  margin-right: 280px; /* Memberi ruang di kanan untuk maskot */
+  display: inline-block;
+  width: calc(100% - 280px);
+}
+
+.mascot-image {
+  max-width: 250px; /* Membuat maskot lebih besar */
+  height: auto;
+  display: block;
+  z-index: 5;
+  transition: transform 0.3s ease;
+
+  /* Posisi maskot di kanan atas relatif terhadap parentnya */
+  position: absolute; /* Menggunakan posisi absolut */
+  top: 0; /* Sesuaikan jarak dari atas */
+  right: 0; /* Sesuaikan jarak dari kanan */
+}
+
+.mascot-image:hover {
+  transform: scale(1.1);
+}
+
+/* Responsivitas untuk mobile */
+@media (max-width: 768px) {
+  .mascot-image {
+    max-width: 150px;
+    position: static; /* Kembali ke posisi statis di mobile */
+    float: none; /* Hapus float */
+    margin: 1rem auto; /* Pusatkan maskot di mobile */
+  }
+
+  #about .main-headline,
+  #about .lead-text {
+    text-align: center; /* Pusatkan teks di mobile */
+    margin-right: 0; /* Hapus margin kanan */
+    width: 100%; /* Lebar penuh */
+  }
+}
+
+/* Responsivitas untuk tablet */
+@media (min-width: 769px) and (max-width: 1186px) {
+  .mascot-image {
+    max-width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #about .main-headline {
+    margin-right: 220px; /* Sesuaikan margin untuk tablet */
+    width: calc(100% - 220px);
+  }
+
+  #about .lead-text {
+    margin-right: 220px; /* Sesuaikan margin untuk tablet */
+    width: calc(100% - 220px);
+  }
+}
+
+/* ... kode yang sudah ada ... */
