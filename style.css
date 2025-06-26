@@ -234,7 +234,7 @@ p,
 }
 
 /* Penyesuaian untuk layar kecil (mobile) */
-@media (max-width: 979px) {
+@media (max-width: 768px) {
   /* === PERUBAHAN DI SINI === */
   .products-container {
     display: flex; /* Mengaktifkan Flexbox */
@@ -271,7 +271,7 @@ p,
     margin-bottom: 1rem; /* Beri sedikit jarak ekstra setelah judul */
   }
 
- #brandText .vert-char {
+  #brandText .vert-char {
     display: block;
   }
 
@@ -283,10 +283,10 @@ p,
     color: #268fcf !important;
   }
 
-   #brandText.vertical-ready .sehat {
+  #brandText.vertical-ready .sehat {
     color: #268fcf !important;
   }
-  
+
   .brand-logo {
     /* Logo disembunyikan di mobile agar tidak terlalu ramai */
     display: none;
@@ -298,7 +298,7 @@ p,
 /* =============================================== */
 
 /* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
-@media (min-width: 769px) and (max-width: 1495px) {
+@media (min-width: 1189px) and (max-width: 1495px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 110%;
@@ -342,6 +342,75 @@ p,
     top: auto; /* Hapus properti top agar tidak konflik */
     bottom: 10%;
     right: 1%;
+    transform: scale(1); /* Ukuran normal, tampak paling depan */
+    z-index: 3; /* Ditempatkan paling depan */
+  }
+  #product3:hover {
+    transform: scale(1.05) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 3%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
+  .brand-logo {
+    top: 8%;
+    right: 5%;
+    width: clamp(160px, 15vw, 230px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1189px) {
+  /* Menyesuaikan ukuran dasar produk untuk tablet */
+  .product-item {
+    width: 110%;
+    max-width: 520px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+  }
+
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
+  #product1 {
+    top: 10%;
+    left: -3%;
+    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
+    z-index: 1; /* Ditempatkan paling belakang */
+  }
+  #product1:hover {
+    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
+    z-index: 10;
+  }
+
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 33%;
+    left: 49%;
+    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
+    transform: translateX(-50%) scale(0.9);
+    z-index: 2; /* Di tengah */
+  }
+  #product2:hover {
+    transform: translateX(-50%) scale(0.95) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    top: auto; /* Hapus properti top agar tidak konflik */
+    bottom: 10%;
+    right: -4%;
     transform: scale(1); /* Ukuran normal, tampak paling depan */
     z-index: 3; /* Ditempatkan paling depan */
   }
@@ -647,8 +716,8 @@ p,
   transform: scale(1.1) rotate(5deg);
 }
 
-
-.marketplace-icons a img { /* Targetkan hanya gambar di dalam tautan */
+.marketplace-icons a img {
+  /* Targetkan hanya gambar di dalam tautan */
   height: 60px;
   background-color: #fff; /* Ini yang membuat kotak putih */
   padding: 10px; /* Ini yang membuat padding di sekitar ikon */
@@ -945,9 +1014,10 @@ p,
   margin-right: 280px; /* Memberi ruang di kanan untuk maskot */
   display: inline-block; /* Memungkinkan float bekerja di sampingnya */
   vertical-align: top; /* Sejajarkan ke atas jika ada elemen inline-block lain */
-  width: calc(100% - 280px); /* Sesuaikan lebar agar tidak tumpang tindih dengan maskot */
+  width: calc(
+    100% - 280px
+  ); /* Sesuaikan lebar agar tidak tumpang tindih dengan maskot */
 }
-
 
 #about .lead-text {
   /* Juga sesuaikan lead-text agar tidak tumpang tindih jika perlu */
@@ -956,7 +1026,6 @@ p,
   display: inline-block;
   width: calc(100% - 280px);
 }
-
 
 .mascot-image {
   max-width: 250px; /* Membuat maskot lebih besar */
@@ -1012,4 +1081,4 @@ p,
   }
 }
 
-/* ... kode yang sudah ada ... */ 
+/* ... kode yang sudah ada ... */
