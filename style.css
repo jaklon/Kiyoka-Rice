@@ -600,6 +600,7 @@ p,
 }
 
 /* --- FOOTER STYLING --- */
+/* --- FOOTER STYLING --- */
 .site-footer {
   position: relative;
   color: #fff;
@@ -612,6 +613,7 @@ p,
   align-items: center;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap; /* Tambahkan ini agar item bisa wrap di layar kecil */
 }
 
 .footer-top-bar img {
@@ -622,6 +624,7 @@ p,
   margin: 0;
   font-size: 1.5rem;
   color: #001f3f;
+  text-align: center; /* Tambahkan ini untuk teks di tengah pada wrap */
 }
 
 .footer-main {
@@ -637,6 +640,14 @@ p,
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+.marketplace-icons {
+  display: flex; /* Pastikan ini adalah flex container */
+  justify-content: center;
+  align-items: center; /* Pusatkan secara vertikal */
+  margin-top: 20px; /* Beri sedikit ruang dari judul */
+  margin-bottom: 30px; /* Beri ruang dari tombol */
+}
+
 .marketplace-icons a {
   display: inline-block;
   margin: 0 15px;
@@ -647,8 +658,8 @@ p,
   transform: scale(1.1) rotate(5deg);
 }
 
-
-.marketplace-icons a img { /* Targetkan hanya gambar di dalam tautan */
+.marketplace-icons a img {
+  /* Targetkan hanya gambar di dalam tautan */
   height: 60px;
   background-color: #fff; /* Ini yang membuat kotak putih */
   padding: 10px; /* Ini yang membuat padding di sekitar ikon */
@@ -658,13 +669,12 @@ p,
 /* Styling untuk maskot footer baru */
 .footer-mascot {
   height: 80px; /* Ukuran maskot, sesuaikan sesuai kebutuhan */
-  width: 400px;
+  width: auto; /* Biarkan lebar mengikuti proporsi gambar */
   object-fit: contain;
   transition: transform 0.3s ease;
-  /* Pastikan maskot tidak memiliki background, padding, atau border-radius */
-  background-color: transparent; /* Pastikan tidak ada latar belakang putih */
-  padding: 0; /* Hapus padding */
-  border-radius: 0; /* Hapus border-radius */
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .footer-mascot:hover {
@@ -673,33 +683,71 @@ p,
 
 /* Penempatan spesifik untuk maskot kiri dan kanan */
 .footer-mascot-left {
-  order: -1; /* Pindahkan maskot kiri ke awal urutan flex */
   margin-right: 20px; /* Jarak antara maskot kiri dan ikon pertama */
 }
 
 .footer-mascot-right {
-  order: 1; /* Pindahkan maskot kanan ke akhir urutan flex */
   margin-left: 20px; /* Jarak antara maskot kanan dan ikon terakhir */
 }
 
 /* Responsivitas untuk mobile: sesuaikan tata letak jika terlalu sempit */
 @media (max-width: 768px) {
+  .footer-top-bar p {
+    font-size: 1.2rem;
+  }
+
   .marketplace-icons {
-    flex-wrap: wrap; /* Izinkan item untuk pindah baris */
-    justify-content: center; /* Pusatkan item saat wrap */
-    gap: 10px; /* Kurangi gap di mobile */
+    flex-wrap: nowrap; /* Pastikan tetap horizontal */
+    justify-content: flex-start; /* Geser konten ke kiri (atau center jika ingin) */
+    padding: 0 15px; /* Beri padding horizontal agar tidak terlalu mepet tepi */
+    gap: 8px; /* Kurangi gap lebih lanjut di mobile */
+  }
+
+  .marketplace-icons a img {
+    height: 45px; /* Perkecil ukuran ikon di mobile */
+    padding: 6px; /* Sesuaikan padding */
   }
 
   .footer-mascot {
-    height: 60px; /* Ukuran maskot lebih kecil di mobile */
-    margin: 0 10px; /* Sesuaikan margin agar tidak terlalu mepet */
-    order: 0; /* Kembalikan ke urutan normal */
+    height: 55px; /* Perkecil ukuran maskot di mobile */
   }
 
-  .footer-mascot-left,
+  .footer-mascot-left {
+    margin-right: 3px; /* Kurangi margin di mobile */
+  }
+
   .footer-mascot-right {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 3px; /* Kurangi margin di mobile */
+  }
+}
+/* === TAMPILAN KHUSUS IPAD / TABLET === */
+@media (min-width: 769px) and (max-width: 1186px) {
+  .footer-top-bar p {
+    font-size: 1.4rem;
+  }
+
+  .marketplace-icons {
+    gap: 20px;
+    flex-wrap: nowrap; /* Jangan wrap di tablet */
+    flex-direction: row; /* Pastikan ini baris untuk tablet */
+  }
+
+  .marketplace-icons a img {
+    height: 55px;
+    padding: 9px;
+  }
+
+  .footer-mascot {
+    height: 75px;
+  }
+
+  .footer-mascot-left {
+    order: -1;
+    margin-right: 15px;
+  }
+  .footer-mascot-right {
+    order: 1;
+    margin-left: 15px;
   }
 }
 
@@ -727,7 +775,6 @@ p,
   font-size: 0.9rem;
   text-align: center;
 }
-
 /* =================================== */
 /* === STYLING PANEL INTERAKTIF BARU === */
 /* =================================== */
@@ -926,90 +973,3 @@ p,
   border-top: 1px solid var(--bs-accordion-border-color);
 }
 
-/* Dalam file style.css */
-
-/* ... kode yang sudah ada ... */
-
-/* Sesuaikan styling untuk maskot di bagian About */
-#about .col-md-8 {
-  /* Pastikan kontainer teks dan maskot memiliki posisi relatif untuk penempatan absolut jika diperlukan,
-     atau jika menggunakan float, ini akan menjadi konteks pemindahan float. */
-  position: relative;
-  /* Tambahkan overflow: hidden; jika ada elemen floated yang menyebabkan tata letak rusak di bawahnya */
-  overflow: hidden;
-}
-
-#about .main-headline {
-  /* Jaga agar teks tetap di kiri atau tengah */
-  text-align: left; /* Mengatur rata kiri untuk teks utama */
-  margin-right: 280px; /* Memberi ruang di kanan untuk maskot */
-  display: inline-block; /* Memungkinkan float bekerja di sampingnya */
-  vertical-align: top; /* Sejajarkan ke atas jika ada elemen inline-block lain */
-  width: calc(100% - 280px); /* Sesuaikan lebar agar tidak tumpang tindih dengan maskot */
-}
-
-
-#about .lead-text {
-  /* Juga sesuaikan lead-text agar tidak tumpang tindih jika perlu */
-  text-align: left; /* Mengatur rata kiri untuk teks lead */
-  margin-right: 280px; /* Memberi ruang di kanan untuk maskot */
-  display: inline-block;
-  width: calc(100% - 280px);
-}
-
-
-.mascot-image {
-  max-width: 250px; /* Membuat maskot lebih besar */
-  height: auto;
-  display: block;
-  z-index: 5;
-  transition: transform 0.3s ease;
-
-  /* Posisi maskot di kanan atas relatif terhadap parentnya */
-  position: absolute; /* Menggunakan posisi absolut */
-  top: 0; /* Sesuaikan jarak dari atas */
-  right: 0; /* Sesuaikan jarak dari kanan */
-}
-
-.mascot-image:hover {
-  transform: scale(1.1);
-}
-
-/* Responsivitas untuk mobile */
-@media (max-width: 768px) {
-  .mascot-image {
-    max-width: 150px;
-    position: static; /* Kembali ke posisi statis di mobile */
-    float: none; /* Hapus float */
-    margin: 1rem auto; /* Pusatkan maskot di mobile */
-  }
-
-  #about .main-headline,
-  #about .lead-text {
-    text-align: center; /* Pusatkan teks di mobile */
-    margin-right: 0; /* Hapus margin kanan */
-    width: 100%; /* Lebar penuh */
-  }
-}
-
-/* Responsivitas untuk tablet */
-@media (min-width: 769px) and (max-width: 1186px) {
-  .mascot-image {
-    max-width: 200px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  #about .main-headline {
-    margin-right: 220px; /* Sesuaikan margin untuk tablet */
-    width: calc(100% - 220px);
-  }
-
-  #about .lead-text {
-    margin-right: 220px; /* Sesuaikan margin untuk tablet */
-    width: calc(100% - 220px);
-  }
-}
-
-/* ... kode yang sudah ada ... */ 
