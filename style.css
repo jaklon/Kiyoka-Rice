@@ -239,13 +239,13 @@ p,
   .products-container {
     display: flex; /* Mengaktifkan Flexbox */
     flex-direction: column; /* Mengatur item agar tersusun vertikal (ke bawah) */
-    align-items: center; /* Memusatkan semua item secara horizontal */
+    /* align-items: center; Memusatkan semua item secara horizontal */
     padding: 2rem 1rem; /* Memberi jarak dari tepi layar (atas-bawah 2rem, kiri-kanan 1rem) */
     gap: 2.5rem; /* Memberi jarak yang KONSISTEN antar setiap item */
   }
 
   .product-item {
-    position: static; /* Kembalikan ke alur dokumen normal */
+    position: relative; /* Kembalikan ke alur dokumen normal */
     transform: none; /* Hapus transform */
     width: 110%; /* Produk bisa dibuat sedikit lebih besar */
     max-width: 500px; /* Batas maksimal ukuran produk */
@@ -254,12 +254,15 @@ p,
   /* Atur ulang posisi vertikal untuk setiap produk */
   #product1 {
     top: 20%;
+    left: -18%;
   }
   #product2 {
     top: 42%;
+    left: -5%;
   }
   #product3 {
     top: 64%;
+    left: 10%;
   }
 
   .brand-text {
