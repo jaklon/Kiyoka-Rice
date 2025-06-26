@@ -202,7 +202,7 @@ p,
 /* Teks utama di kiri bawah */
 .brand-text {
   position: absolute;
-  bottom: 8%;
+  bottom: 3%;
   left: 5%;
   color: white;
   font-size: clamp(2.5rem, 6vw, 5rem); /* Ukuran font responsif */
@@ -234,7 +234,7 @@ p,
 }
 
 /* Penyesuaian untuk layar kecil (mobile) */
-@media (max-width: 769px) {
+@media (max-width: 979px) {
   /* === PERUBAHAN DI SINI === */
   .products-container {
     display: flex; /* Mengaktifkan Flexbox */
@@ -282,7 +282,7 @@ p,
 /* =============================================== */
 
 /* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
-@media (min-width: 769px) and (max-width: 1186px) {
+@media (min-width: 769px) and (max-width: 1495px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 110%;
@@ -324,7 +324,7 @@ p,
   /* Produk 3: Kanan Bawah (Paling Dekat) */
   #product3 {
     top: auto; /* Hapus properti top agar tidak konflik */
-    bottom: 14%;
+    bottom: 10%;
     right: 1%;
     transform: scale(1); /* Ukuran normal, tampak paling depan */
     z-index: 3; /* Ditempatkan paling depan */
@@ -338,7 +338,7 @@ p,
 
   /* Teks utama di kiri bawah */
   .brand-text {
-    bottom: 6%;
+    bottom: 3%;
     left: 3%;
     font-size: clamp(3rem, 7vw, 5rem);
   }
