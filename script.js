@@ -80,3 +80,59 @@ document.addEventListener("DOMContentLoaded", function () {
   initGsapAnimations(); // Jalankan animasi untuk section utama
   setupWhatsAppButton(); // Atur tombol WhatsApp
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Fungsi-fungsi lain...
+  revealOnScroll();
+  initGsapAnimations();
+  setupWhatsAppButton();
+  adjustBrandTextVertical(); // <<< Panggil di sini
+
+  window.addEventListener("resize", adjustBrandTextVertical); // Update kalau di-resize
+});
+
+function adjustBrandTextVertical() {
+  const brandText = document.getElementById("brandText");
+  if (!brandText) return;
+
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile && !brandText.classList.contains("vertical-ready")) {
+    const temp = document.createElement("div");
+    temp.innerHTML = brandText.innerHTML;
+
+    let newHTML = "";
+
+    temp.childNodes.forEach((node) => {
+      if (node.nodeType === 3) {
+        newHTML += node.textContent
+          .split("")
+          .map((c) => `<span class="vert-char">${c}</span>`)
+          .join("");
+      } else if (
+        node.nodeType === 1 &&
+        node.classList.contains("sehat")
+      ) {
+        newHTML += node.textContent
+          .split("")
+          .map((c) => `<span class="vert-char sehat">${c}</span>`)
+          .join("");
+      }
+    });
+
+    brandText.innerHTML = newHTML;
+    brandText.classList.add("vertical-ready");
+
+    // Style posisi lebih rapi ke kiri
+    brandText.style.position = "absolute";
+    brandText.style.left = "24px"; // <-- ini bikin gak mepet kiri
+    brandText.style.top = "50%";
+    brandText.style.transform = "translateY(-50%)";
+    brandText.style.fontSize = "1.8rem";
+    brandText.style.lineHeight = "1.3";
+    brandText.style.textAlign = "left";
+    brandText.style.color = "white";
+  }
+}
+
+
