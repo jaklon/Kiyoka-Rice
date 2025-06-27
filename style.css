@@ -203,15 +203,15 @@ p,
 .brand-text {
   position: absolute;
   bottom: 3%;
-  left: 5%;
+  left: 0; /* Adjust left to 0 for full width marquee */
+  width: 100%; /* Ensure it spans full width */
   color: white;
   font-size: clamp(2.5rem, 6vw, 5rem); /* Ukuran font responsif */
   font-weight: 900;
   line-height: 1;
-
-  /* --- PERBAIKAN DI SINI --- */
-  /* Format yang benar: [jarak-kanan] [jarak-bawah] [blur] [warna] */
-  text-shadow: 2px 2px 3px gray;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing duplicated text initially */
+  /* Remove text-shadow if it conflicts with the marquee effect */
 }
 
 /* Logo di kanan atas */
@@ -265,17 +265,18 @@ p,
     left: 10%;
   }
 
-  .brand-text {
-    position: static; /* Kembalikan ke alur dokumen normal */
-    transform: none; /* Hapus transform */
+.brand-text {
+    position: absolute; /* Keep absolute for marquee on mobile */
+    bottom: 3%; /* Keep it at the bottom */
+    left: 0; /* Ensure it starts from the left edge */
     width: 100%;
-    text-align: center;
+    text-align: center; /* This might not be fully visible with marquee */
     font-size: 2.5rem; /* Perbesar sedikit agar lebih menonjol */
-    margin-bottom: 1rem; /* Beri sedikit jarak ekstra setelah judul */
+    margin-bottom: 0; /* Remove margin-bottom to ensure it's at the bottom */
+    /* Remove vertical-ready class logic for horizontal marquee */
   }
-
   #brandText .vert-char {
-    display: block;
+     display: inline;
   }
 
   #brandText.vertical-mode {
@@ -286,7 +287,7 @@ p,
     color: #268fcf !important;
   }
 
-  #brandText.vertical-ready .sehat {
+  #brandText.vertical-ready .sehat { 
     color: #268fcf !important;
   }
 
@@ -1045,4 +1046,35 @@ p,
   border-top: 1px solid var(--bs-accordion-border-color);
 }
 
+/* ============================ */
+/* === MOBILE LANDSCAPE CSS === */
+/* ============================ */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .products-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .product-item {
+    width: 30%;
+    max-width: 180px;
+    position: static;
+    transform: none;
+  }
+
+  .brand-text {
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .brand-logo {
+    display: none;
+  }
+}
 
