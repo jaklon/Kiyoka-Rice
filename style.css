@@ -240,8 +240,8 @@ p,
     display: flex; /* Mengaktifkan Flexbox */
     flex-direction: column; /* Mengatur item agar tersusun vertikal (ke bawah) */
     /* align-items: center; Memusatkan semua item secara horizontal */
-    padding: 2rem 1rem; /* Memberi jarak dari tepi layar (atas-bawah 2rem, kiri-kanan 1rem) */
-    gap: 2.5rem; /* Memberi jarak yang KONSISTEN antar setiap item */
+    padding: 3rem 1rem; /* Memberi jarak dari tepi layar (atas-bawah 2rem, kiri-kanan 1rem) */
+    gap: 2rem; /* Memberi jarak yang KONSISTEN antar setiap item */
   }
 
   .product-item {
@@ -254,53 +254,62 @@ p,
   /* Atur ulang posisi vertikal untuk setiap produk */
   #product1 {
     top: 20%;
-    left: -21%;
+    left: -18%;
   }
   #product2 {
     top: 42%;
-    left: 11%;
+    left: -5%;
   }
   #product3 {
     top: 64%;
-    left: -20%;
+    left: 10%;
   }
 
   .brand-text {
-    position: static; /* Kunci utama agar posisi anak bisa diatur relatif terhadap ini */
     width: 100%;
-    height: 150px; /* Beri tinggi agar elemen di dalamnya muat. Sesuaikan nilainya. */
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    /* Hapus display:flex dan flex-direction karena tidak diperlukan di metode ini */
+    height: 70px; /* Batasi tinggi agar teks tidak terlalu besar */
+    max-width: 600px; /* Batasi lebar agar efek terlihat bagus di layar lebar */
+    font-size: 2.5rem; /* Ukuran font bisa disesuaikan */
+    font-weight: bold;
+    color: #ffffff;
+
+    /* KUNCI 1: Sembunyikan semua yang keluar dari kotak H1 */
+    overflow: hidden;
+    /* KUNCI 2: Pastikan konten di dalamnya tidak pindah ke baris baru */
+    white-space: nowrap;
+    padding: 1rem 0; /* Memberi sedikit ruang vertikal */
   }
 
-  .text-item {
-    position: absolute; /* Membuat elemen bisa diatur posisinya dengan bebas */
-    width: 100%; /* Agar text-align berfungsi */
-    text-align: center; /* Membuat teks tetap di tengah secara horizontal */
+  /* Ini adalah elemen yang akan bergerak */
+  .marquee-content {
+    display: inline-block; /* Membuatnya menjadi satu blok yang bisa dianimasikan */
+    /* KUNCI 3: Menerapkan animasi 'marquee' */
+    animation-name: marquee;
+    animation-duration: 8s; /* Durasi teks berjalan dari kanan ke kiri */
+    animation-iteration-count: infinite; /* Mengulang animasi selamanya */
+    animation-timing-function: linear; /* Kecepatan konstan, tidak melambat atau cepat */
   }
 
-  /* Atur posisi unik untuk setiap ID */
-  #nasi {
-    top: 100px;
-    left: 80px;
+  /* Definisi animasi 'marquee' */
+  @keyframes marquee {
+    /* Posisi awal: Tepat di luar sisi kanan layar */
+    0% {
+      transform: translateX(100%);
+    }
+    /* Posisi akhir: Tepat di luar sisi kiri layar */
+    100% {
+      transform: translateX(-100%);
+    }
   }
 
-  #sehat {
-    top: 400px; /* Turun sedikit dari 'Nasi' */
-    left: -100px;
-  }
-
-  #masa {
-    top: 650px; /* Turun lagi dari 'Sehat' */
-    left: 90px;
+  /* Mempertahankan warna khusus untuk kata 'Sehat' */
+  .brand-text .sehat {
+    color: #268fcf; /* Warna biru sesuai kode Anda */
   }
 
   .brand-logo {
     /* Logo disembunyikan di mobile agar tidak terlalu ramai */
-    display: flex;
-    top: 900px;
-    left: 125px;
+    display: none;
   }
 }
 
