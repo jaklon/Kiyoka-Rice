@@ -770,27 +770,19 @@ p,
   }
 
   .marketplace-icons {
-    flex-wrap: nowrap; /* Pastikan tetap horizontal */
-    justify-content: flex-start; /* Geser konten ke kiri (atau center jika ingin) */
-    padding: 0 15px; /* Beri padding horizontal agar tidak terlalu mepet tepi */
-    gap: 8px; /* Kurangi gap lebih lanjut di mobile */
+    flex-wrap: nowrap; 
+    justify-content: center; /* DIUBAH: Mengatur posisi item ke tengah */
+    padding: 0 15px; 
+    gap: 15px; /* DIUBAH: Menambah jarak antar ikon */
   }
 
   .marketplace-icons a img {
-    height: 45px; /* Perkecil ukuran ikon di mobile */
-    padding: 6px; /* Sesuaikan padding */
+    height: 55px; /* DIUBAH: Memperbesar ikon */
+    padding: 8px; /* DIUBAH: Menyesuaikan padding ikon */
   }
 
   .footer-mascot {
-    height: 55px; /* Perkecil ukuran maskot di mobile */
-  }
-
-  .footer-mascot-left {
-    margin-right: 3px; /* Kurangi margin di mobile */
-  }
-
-  .footer-mascot-right {
-    margin-left: 3px; /* Kurangi margin di mobile */
+    height: 70px; /* DIUBAH: Memperbesar maskot */
   }
 }
 /* === TAMPILAN KHUSUS IPAD / TABLET === */
@@ -806,12 +798,12 @@ p,
   }
 
   .marketplace-icons a img {
-    height: 55px;
+    height: 70px;
     padding: 9px;
   }
 
   .footer-mascot {
-    height: 75px;
+    height: 90px;
   }
 
   .footer-mascot-left {
