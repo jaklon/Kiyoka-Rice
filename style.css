@@ -733,7 +733,7 @@ p,
 
 .marketplace-icons a img {
   /* Targetkan hanya gambar di dalam tautan */
-  height: 60px;
+  height: 70px;
   background-color: #fff; /* Ini yang membuat kotak putih */
   padding: 10px; /* Ini yang membuat padding di sekitar ikon */
   border-radius: 15px; /* Ini yang membuat sudut melengkung */
@@ -741,7 +741,7 @@ p,
 
 /* Styling untuk maskot footer baru */
 .footer-mascot {
-  height: 80px; /* Ukuran maskot, sesuaikan sesuai kebutuhan */
+  height: 70px; /* Ukuran maskot, sesuaikan sesuai kebutuhan */
   width: auto; /* Biarkan lebar mengikuti proporsi gambar */
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -770,19 +770,33 @@ p,
   }
 
   .marketplace-icons {
+    display: flex;
     flex-wrap: nowrap; 
-    justify-content: center; /* DIUBAH: Mengatur posisi item ke tengah */
+    justify-content: center;
+    align-items: center; 
     padding: 0 15px; 
-    gap: 15px; /* DIUBAH: Menambah jarak antar ikon */
+    gap: 15px;
   }
 
   .marketplace-icons a img {
-    height: 55px; /* DIUBAH: Memperbesar ikon */
-    padding: 8px; /* DIUBAH: Menyesuaikan padding ikon */
+    height: 55px;          /* Tentukan tinggi kotak ikon */
+    width: 55px;           /* DIUBAH: Tentukan lebar kotak ikon yang sama */
+    object-fit: contain;   /* DIUBAH: Pastikan gambar pas tanpa gepeng */
+    display: block;
   }
 
   .footer-mascot {
-    height: 70px; /* DIUBAH: Memperbesar maskot */
+    height: 70px;          /* Tentukan tinggi kotak maskot */
+    width: 97px;           /* DIUBAH: Tentukan lebar kotak maskot */
+    object-fit: contain;   /* DIUBAH: Pastikan gambar pas tanpa gepeng */
+  }
+
+  .footer-mascot-left {
+    margin-right: 3px; /* Kurangi margin di mobile */
+  }
+
+  .footer-mascot-right {
+    margin-left: 3px; /* Kurangi margin di mobile */
   }
 }
 /* === TAMPILAN KHUSUS IPAD / TABLET === */
@@ -798,12 +812,12 @@ p,
   }
 
   .marketplace-icons a img {
-    height: 70px;
+    height: 55px;
     padding: 9px;
   }
 
   .footer-mascot {
-    height: 90px;
+    height: 75px;
   }
 
   .footer-mascot-left {
