@@ -266,7 +266,7 @@ p,
   }
 
   .brand-text {
-    position: relative; /* Kunci utama agar posisi anak bisa diatur relatif terhadap ini */
+    position: static; /* Kunci utama agar posisi anak bisa diatur relatif terhadap ini */
     width: 100%;
     height: 150px; /* Beri tinggi agar elemen di dalamnya muat. Sesuaikan nilainya. */
     font-size: 3.5rem;
@@ -282,18 +282,18 @@ p,
 
   /* Atur posisi unik untuk setiap ID */
   #nasi {
-    top: -780px;
+    top: 100px;
     left: 80px;
   }
 
   #sehat {
-    top: -500px; /* Turun sedikit dari 'Nasi' */
-    left: -110px;
+    top: 400px; /* Turun sedikit dari 'Nasi' */
+    left: -100px;
   }
 
   #masa {
-    top: -230px; /* Turun lagi dari 'Sehat' */
-    left: 80px;
+    top: 650px; /* Turun lagi dari 'Sehat' */
+    left: 90px;
   }
 
   .brand-logo {
