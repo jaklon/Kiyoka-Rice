@@ -254,45 +254,53 @@ p,
   /* Atur ulang posisi vertikal untuk setiap produk */
   #product1 {
     top: 20%;
-    left: -18%;
+    left: -21%;
   }
   #product2 {
     top: 42%;
-    left: -5%;
+    left: 11%;
   }
   #product3 {
     top: 64%;
-    left: 10%;
+    left: -20%;
   }
 
   .brand-text {
-    position: static; /* Kembalikan ke alur dokumen normal */
-    transform: none; /* Hapus transform */
+    position: relative; /* Kunci utama agar posisi anak bisa diatur relatif terhadap ini */
     width: 100%;
-    text-align: center;
-    font-size: 2.5rem; /* Perbesar sedikit agar lebih menonjol */
-    margin-bottom: 1rem; /* Beri sedikit jarak ekstra setelah judul */
+    height: 150px; /* Beri tinggi agar elemen di dalamnya muat. Sesuaikan nilainya. */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    /* Hapus display:flex dan flex-direction karena tidak diperlukan di metode ini */
   }
 
-  #brandText .vert-char {
-    display: block;
+  .text-item {
+    position: absolute; /* Membuat elemen bisa diatur posisinya dengan bebas */
+    width: 100%; /* Agar text-align berfungsi */
+    text-align: center; /* Membuat teks tetap di tengah secara horizontal */
   }
 
-  #brandText.vertical-mode {
-    color: white;
+  /* Atur posisi unik untuk setiap ID */
+  #nasi {
+    top: -780px;
+    left: 80px;
   }
 
-  #brandText .sehat {
-    color: #268fcf !important;
+  #sehat {
+    top: -500px; /* Turun sedikit dari 'Nasi' */
+    left: -110px;
   }
 
-  #brandText.vertical-ready .sehat {
-    color: #268fcf !important;
+  #masa {
+    top: -230px; /* Turun lagi dari 'Sehat' */
+    left: 80px;
   }
 
   .brand-logo {
     /* Logo disembunyikan di mobile agar tidak terlalu ramai */
-    display: none;
+    display: flex;
+    top: 900px;
+    left: 125px;
   }
 }
 
