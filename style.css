@@ -11,6 +11,13 @@
   - Footer BG: #E5A3A4 (Soft Pink)
 */
 
+/* === FIX UNTUK MENGHILANGKAN SPACE DI KANAN (HORIZONTAL OVERFLOW) === */
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-family: "Nunito", sans-serif; /* Fallback sans-serif for UI elements */
@@ -160,15 +167,6 @@ p,
   background-repeat: no-repeat;
 }
 
-.scene-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Wrapper tetap setinggi layar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Gambar produk sekarang diatur posisinya secara absolut */
 .product-item {
   position: absolute;
@@ -247,28 +245,28 @@ p,
   .product-item {
     position: relative; /* Kembalikan ke alur dokumen normal */
     transform: none; /* Hapus transform */
-    height: 200px;
     width: 100%; /* Produk bisa dibuat sedikit lebih besar */
-    max-width: 420px; /* Batas maksimal ukuran produk */
+    max-width: 450px; /* Batas maksimal ukuran produk */
   }
 
   /* Atur ulang posisi vertikal untuk setiap produk */
   #product1 {
-    top: -20px;
-    left: -20%;
+    top: 20%;
+    left: -10%;
   }
   #product2 {
-    top: -40px;
+    top: -30px;
     left: 10%;
   }
   #product3 {
-    top: -40px;
-    left: 35%;
+    top: -50px;
+    left: 30%;
   }
 
   .brand-text {
     width: 100%;
-    height: 70px; /* Batasi tinggi agar teks tidak terlalu besar */
+    height: 100%; /* Batasi tinggi agar teks tidak terlalu besar */
+    max-height: 80px;
     max-width: 600px; /* Batasi lebar agar efek terlihat bagus di layar lebar */
     font-size: 2.5rem; /* Ukuran font bisa disesuaikan */
     font-weight: bold;
@@ -319,7 +317,7 @@ p,
 /* =============================================== */
 
 /* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
-@media (min-width: 768px) and (max-width: 1495px) {
+@media (min-width: 1189px) and (max-width: 1495px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 110%;
@@ -780,32 +778,51 @@ p,
   margin-left: 20px; /* Jarak antara maskot kanan dan ikon terakhir */
 }
 
-/* Responsivitas untuk mobile: sesuaikan tata letak jika terlalu sempit */
+/* Tampilan Mobile */
 @media (max-width: 768px) {
+  #question {
+    padding: 60px 15px; /* Menyesuaikan padding untuk mobile */
+  }
+
   .footer-top-bar p {
     font-size: 1.2rem;
   }
 
+  .footer-main {
+    padding: 30px 15px 25px; /* Sesuaikan padding */
+  }
+
+  .footer-main h4 {
+    font-size: 1.6rem; /* Perkecil judul */
+    margin-bottom: 20px;
+  }
+
   .marketplace-icons {
-    flex-wrap: wrap; /* Izinkan item untuk pindah baris */
-    justify-content: center; /* Pusatkan item saat wrap */
-    gap: 10px; /* Kurangi gap di mobile */
+    gap: 15px; /* Menyesuaikan jarak antar ikon */
+    margin-bottom: 25px;
+  }
+
+  .marketplace-icons a {
+    margin: 0; /* Menghapus margin agar 'gap' bekerja dengan baik */
+  }
+
+  .marketplace-icons a img {
+    height: 50px; /* Perkecil ukuran ikon */
+    padding: 8px;
+    border-radius: 12px;
   }
 
   .footer-mascot {
-    height: 60px; /* Ukuran maskot lebih kecil di mobile */
-    margin: 0 10px; /* Sesuaikan margin agar tidak terlalu mepet */
-    order: 0; /* Kembalikan ke urutan normal */
+    height: 60px; /* Mengubah ukuran maskot agar pas */
   }
 
-  .footer-mascot-left {
-    margin-right: 3px; /* Kurangi margin di mobile */
-  }
-
-  .footer-mascot-right {
-    margin-left: 3px; /* Kurangi margin di mobile */
+  .shop-now-btn {
+    font-size: 1.2rem; /* Perkecil font tombol */
+    padding: 12px 30px;
+    margin-top: 15px; /* Kurangi jarak atas */
   }
 }
+
 /* === TAMPILAN KHUSUS IPAD / TABLET === */
 @media (min-width: 769px) and (max-width: 1186px) {
   .footer-top-bar p {
@@ -1062,31 +1079,3 @@ p,
 /* ============================ */
 /* === MOBILE LANDSCAPE CSS === */
 /* ============================ */
-@media only screen and (max-width: 768px) and (orientation: landscape) {
-  .products-container {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .product-item {
-    width: 30%;
-    max-width: 180px;
-    position: static;
-    transform: none;
-  }
-
-  .brand-text {
-    position: absolute;
-    bottom: 2%;
-    left: 0;
-    width: 100%;
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .brand-logo {
-    display: none;
-  }
-}
