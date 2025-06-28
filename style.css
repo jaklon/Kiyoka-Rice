@@ -252,15 +252,15 @@ p,
   /* Atur ulang posisi vertikal untuk setiap produk */
   #product1 {
     top: 20%;
-    left: -10%;
+    left: -20%;
   }
   #product2 {
     top: -30px;
-    left: 10%;
+    left: 0%;
   }
   #product3 {
-    top: -50px;
-    left: 30%;
+    top: -20px;
+    left: 20%;
   }
 
   .brand-text {
