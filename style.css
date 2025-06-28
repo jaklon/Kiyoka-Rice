@@ -320,8 +320,8 @@ p,
 @media (min-width: 1189px) and (max-width: 1495px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
-    width: 110%;
-    max-width: 670px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+    width: 100%;
+    max-width: 570px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
   /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
@@ -389,8 +389,8 @@ p,
 @media (min-width: 768px) and (max-width: 1189px) {
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
-    width: 110%;
-    max-width: 520px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+    width: 100%;
+    max-width: 450px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
   /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
@@ -404,38 +404,18 @@ p,
   #product1 {
     top: 10%;
     left: -3%;
-    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
-    z-index: 1; /* Ditempatkan paling belakang */
-  }
-  #product1:hover {
-    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
-    z-index: 10;
   }
 
   /* Produk 2: Tengah */
   #product2 {
-    top: 33%;
-    left: 49%;
-    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
-    transform: translateX(-50%) scale(0.9);
-    z-index: 2; /* Di tengah */
-  }
-  #product2:hover {
-    transform: translateX(-50%) scale(0.95) translateY(-10px);
-    z-index: 10;
+    top: 35%;
+    left: 20%;
   }
 
   /* Produk 3: Kanan Bawah (Paling Dekat) */
   #product3 {
-    top: auto; /* Hapus properti top agar tidak konflik */
-    bottom: 10%;
-    right: -4%;
-    transform: scale(1); /* Ukuran normal, tampak paling depan */
-    z-index: 3; /* Ditempatkan paling depan */
-  }
-  #product3:hover {
-    transform: scale(1.05) translateY(-10px);
-    z-index: 10;
+    bottom: 12%;
+    right: -10%;
   }
 
   /* --- Penyesuaian Elemen Lain --- */
