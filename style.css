@@ -390,7 +390,7 @@ p,
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 100%;
-    max-width: 450px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+    max-width: 650px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
   /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
