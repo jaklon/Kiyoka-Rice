@@ -159,6 +159,8 @@ p,
   position: relative;
   min-height: 100vh; /* Minimal setinggi layar, tapi bisa di-scroll */
   overflow: hidden; /* Mencegah elemen keluar dari section */
+  padding: 2rem 2rem 5rem 2rem; /* Atas Kanan Bawah Kiri */
+  box-sizing: border-box; /* Penting agar padding tidak menambah ukuran section */
 
   /* === MENGGUNAKAN GAMBAR SEBAGAI BACKGROUND === */
   background-image: url("/asset/pinkbg.svg");
@@ -201,7 +203,7 @@ p,
 .brand-text {
   position: absolute;
   bottom: 3%;
-  left: 0; /* Adjust left to 0 for full width marquee */
+  left: 5%; /* Adjust left to 0 for full width marquee */
   width: 100%; /* Ensure it spans full width */
   color: white;
   font-size: clamp(2.5rem, 6vw, 5rem); /* Ukuran font responsif */
@@ -232,6 +234,134 @@ p,
 }
 
 /* Penyesuaian untuk layar kecil (mobile) */
+
+/* =============================================== */
+/* ==       TAMPILAN KHUSUS IPAD / TABLET       == */
+/* =============================================== */
+
+/* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
+@media (min-width: 1189px) and (max-width: 1495px) {
+  /* Menyesuaikan ukuran dasar produk untuk tablet */
+  .product-item {
+    width: 100%;
+    max-width: 570px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+  }
+
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
+  #product1 {
+    top: 10%;
+    left: -3%;
+    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
+    z-index: 1; /* Ditempatkan paling belakang */
+  }
+  #product1:hover {
+    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
+    z-index: 10;
+  }
+
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 33%;
+    left: 47%;
+    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
+    transform: translateX(-50%) scale(0.9);
+    z-index: 2; /* Di tengah */
+  }
+  #product2:hover {
+    transform: translateX(-50%) scale(0.95) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    top: auto; /* Hapus properti top agar tidak konflik */
+    bottom: 10%;
+    right: 1%;
+    transform: scale(1); /* Ukuran normal, tampak paling depan */
+    z-index: 3; /* Ditempatkan paling depan */
+  }
+  #product3:hover {
+    transform: scale(1.05) translateY(-10px);
+    z-index: 10;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 3%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
+  .brand-logo {
+    top: 8%;
+    right: 5%;
+    width: clamp(160px, 15vw, 230px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1189px) {
+  /* Menyesuaikan ukuran dasar produk untuk tablet */
+  .product-item {
+    width: 100%;
+    max-width: 650px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+  }
+
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
+  #product1 {
+    top: 10%;
+    left: -3%;
+  }
+
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 35%;
+    left: 20%;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    bottom: 12%;
+    right: -10%;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 3%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
+  .brand-logo {
+    top: 8%;
+    right: 5%;
+    width: clamp(160px, 15vw, 230px);
+  }
+}
+
+/* =============================================== */
+/* ==   TAMPILAN KHUSUS TABLET / IPAD LANDSCAPE   == */
+/* =============================================== */
+
 @media (max-width: 768px) {
   /* === PERUBAHAN DI SINI === */
   .products-container {
@@ -313,125 +443,71 @@ p,
 }
 
 /* =============================================== */
-/* ==       TAMPILAN KHUSUS IPAD / TABLET       == */
+/* ==      TAMPILAN KHUSUS MOBILE LANDSCAPE     == */
 /* =============================================== */
 
-/* Aturan ini akan aktif untuk layar dengan lebar antara 768px dan 1185px */
-@media (min-width: 1189px) and (max-width: 1495px) {
-  /* Menyesuaikan ukuran dasar produk untuk tablet */
-  .product-item {
-    width: 100%;
-    max-width: 570px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+/* Aturan ini aktif saat layar dalam mode landscape DAN tingginya sangat pendek (khas ponsel) */
+@media (orientation: landscape) and (max-height: 500px) {
+  .products-container {
+    display: block;
+    padding: 0;
   }
 
-  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
-   * agar efek zoom tidak merusak skala awal yang sudah diatur.
-   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
-  */
-
-  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
-
-  /* Produk 1: Kiri Atas (Paling Jauh) */
-  #product1 {
-    top: 10%;
-    left: -3%;
-    transform: scale(0.8); /* Dibuat lebih kecil untuk efek 'jauh' */
-    z-index: 1; /* Ditempatkan paling belakang */
-  }
-  #product1:hover {
-    transform: scale(0.85) translateY(-10px); /* Sedikit membesar & terangkat */
-    z-index: 10;
-  }
-
-  /* Produk 2: Tengah */
-  #product2 {
-    top: 33%;
-    left: 47%;
-    /* Trik centering: geser 50% ke kiri dari lebarnya sendiri */
-    transform: translateX(-50%) scale(0.9);
-    z-index: 2; /* Di tengah */
-  }
-  #product2:hover {
-    transform: translateX(-50%) scale(0.95) translateY(-10px);
-    z-index: 10;
-  }
-
-  /* Produk 3: Kanan Bawah (Paling Dekat) */
-  #product3 {
-    top: auto; /* Hapus properti top agar tidak konflik */
-    bottom: 10%;
-    right: 1%;
-    transform: scale(1); /* Ukuran normal, tampak paling depan */
-    z-index: 3; /* Ditempatkan paling depan */
-  }
-  #product3:hover {
-    transform: scale(1.05) translateY(-10px);
-    z-index: 10;
-  }
-
-  /* --- Penyesuaian Elemen Lain --- */
-
-  /* Teks utama di kiri bawah */
   .brand-text {
-    bottom: 3%;
-    left: 3%;
-    font-size: clamp(3rem, 7vw, 5rem);
+    position: absolute;
+    top: 85%;
+    left: 4%;
+    transform: translateY(-50%);
+    width: 45%;
+    white-space: normal;
+    text-align: left;
+    height: auto;
+    max-height: none;
+    line-height: 1.2; /* Menjaga jarak baris tetap baik */
+
+    /* --- PERBAIKAN: Ukuran font diperkecil agar tinggi blok teks muat di layar --- */
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
   }
 
-  /* Logo di kanan atas */
+  .marquee-content {
+    display: inline;
+    animation: none;
+  }
+
+  .brand-text .sehat {
+    /* --- PERBAIKAN: Ukuran font spesifik juga disesuaikan --- */
+    font-size: clamp(1.4rem, 4.5vw, 3rem);
+  }
+
+  .product-item {
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    z-index: 1;
+  }
+
+  #product1 {
+    top: 5%;
+    right: 20%;
+  }
+  #product2 {
+    top: 30%;
+    right: 5%;
+  }
+  #product3 {
+    top: auto;
+    bottom: -1%;
+    right: 15%;
+  }
+
   .brand-logo {
+    display: block;
     top: 8%;
     right: 5%;
-    width: clamp(160px, 15vw, 230px);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1189px) {
-  /* Menyesuaikan ukuran dasar produk untuk tablet */
-  .product-item {
-    width: 100%;
-    max-width: 650px; /* Ukuran dasar untuk produk terbesar (paling depan) */
-  }
-
-  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
-   * agar efek zoom tidak merusak skala awal yang sudah diatur.
-   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
-  */
-
-  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
-
-  /* Produk 1: Kiri Atas (Paling Jauh) */
-  #product1 {
-    top: 10%;
-    left: -3%;
-  }
-
-  /* Produk 2: Tengah */
-  #product2 {
-    top: 35%;
-    left: 20%;
-  }
-
-  /* Produk 3: Kanan Bawah (Paling Dekat) */
-  #product3 {
-    bottom: 12%;
-    right: -10%;
-  }
-
-  /* --- Penyesuaian Elemen Lain --- */
-
-  /* Teks utama di kiri bawah */
-  .brand-text {
-    bottom: 3%;
-    left: 3%;
-    font-size: clamp(3rem, 7vw, 5rem);
-  }
-
-  /* Logo di kanan atas */
-  .brand-logo {
-    top: 8%;
-    right: 5%;
-    width: clamp(160px, 15vw, 230px);
+    width: 130px;
+    transform: rotate(-5deg);
+    box-shadow: none;
+    z-index: 4;
   }
 }
 
