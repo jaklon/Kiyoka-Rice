@@ -313,7 +313,7 @@ p,
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 100%;
-    max-width: 650px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+    max-width: 550px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
   /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
@@ -448,66 +448,50 @@ p,
 
 /* Aturan ini aktif saat layar dalam mode landscape DAN tingginya sangat pendek (khas ponsel) */
 @media (orientation: landscape) and (max-height: 500px) {
-  .products-container {
-    display: block;
-    padding: 0;
-  }
-
-  .brand-text {
-    position: absolute;
-    top: 85%;
-    left: 4%;
-    transform: translateY(-50%);
-    width: 45%;
-    white-space: normal;
-    text-align: left;
-    height: auto;
-    max-height: none;
-    line-height: 1.2; /* Menjaga jarak baris tetap baik */
-
-    /* --- PERBAIKAN: Ukuran font diperkecil agar tinggi blok teks muat di layar --- */
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-  }
-
-  .marquee-content {
-    display: inline;
-    animation: none;
-  }
-
-  .brand-text .sehat {
-    /* --- PERBAIKAN: Ukuran font spesifik juga disesuaikan --- */
-    font-size: clamp(1.4rem, 4.5vw, 3rem);
-  }
-
   .product-item {
-    position: absolute;
     width: 100%;
-    max-width: 350px;
-    z-index: 1;
+    max-width: 420px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
+  /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
+   * agar efek zoom tidak merusak skala awal yang sudah diatur.
+   * z-index: 10; akan memastikan produk yang di-hover selalu tampil di depan.
+  */
+
+  /* --- Posisi, Skala, dan Urutan Tumpukan Produk --- */
+
+  /* Produk 1: Kiri Atas (Paling Jauh) */
   #product1 {
-    top: 5%;
-    right: 20%;
-  }
-  #product2 {
-    top: 30%;
-    right: 5%;
-  }
-  #product3 {
-    top: auto;
-    bottom: -1%;
-    right: 15%;
+    top: 10%;
+    left: -9%;
   }
 
+  /* Produk 2: Tengah */
+  #product2 {
+    top: 35%;
+    left: 17%;
+  }
+
+  /* Produk 3: Kanan Bawah (Paling Dekat) */
+  #product3 {
+    bottom: 12%;
+    left: 45%;
+  }
+
+  /* --- Penyesuaian Elemen Lain --- */
+
+  /* Teks utama di kiri bawah */
+  .brand-text {
+    bottom: 3%;
+    left: 3%;
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  /* Logo di kanan atas */
   .brand-logo {
-    display: block;
     top: 8%;
     right: 5%;
-    width: 130px;
-    transform: rotate(-5deg);
-    box-shadow: none;
-    z-index: 4;
+    width: clamp(160px, 15vw, 230px);
   }
 }
 
