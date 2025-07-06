@@ -1,0 +1,6 @@
+# Perintah ini mengizinkan semua robot untuk mengakses seluruh situs
+User-agent: *
+Allow: /
+
+# Baris ini memberitahu robot di mana lokasi peta situs Anda
+Sitemap: https://kiyoka.asia/sitemap.xml
