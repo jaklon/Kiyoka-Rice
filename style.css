@@ -195,7 +195,7 @@ p,
   left: 30%;
 }
 #product3 {
-  bottom: 7%;
+  bottom: 5%;
   right: 10%;
 }
 
@@ -281,8 +281,8 @@ p,
 
   /* Produk 3: Kanan Bawah (Paling Dekat) */
   #product3 {
-    top: auto; /* Hapus properti top agar tidak konflik */
-    bottom: 10%;
+    top: 48%; /* Hapus properti top agar tidak konflik */
+    bottom: 5%;
     right: 1%;
     transform: scale(1); /* Ukuran normal, tampak paling depan */
     z-index: 3; /* Ditempatkan paling depan */
@@ -313,7 +313,7 @@ p,
   /* Menyesuaikan ukuran dasar produk untuk tablet */
   .product-item {
     width: 100%;
-    max-width: 550px; /* Ukuran dasar untuk produk terbesar (paling depan) */
+    max-width: 450px; /* Ukuran dasar untuk produk terbesar (paling depan) */
   }
 
   /* * Penting: Kita perlu membuat aturan hover spesifik untuk setiap produk 
@@ -337,8 +337,8 @@ p,
 
   /* Produk 3: Kanan Bawah (Paling Dekat) */
   #product3 {
-    bottom: 12%;
-    right: -10%;
+    bottom: 10%;
+    right: -5%;
   }
 
   /* --- Penyesuaian Elemen Lain --- */
